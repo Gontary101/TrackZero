@@ -11,7 +11,7 @@
   <dimen name="trackzero_space_xl">32dp</dimen>
 
   <!-- Corner Radii Tokens -->
-  <dimen name="trackzero_radius_bottom_island">30dp</dimen>
+  <dimen name="trackzero_radius_bottom_island">999dp</dimen>
   <dimen name="trackzero_radius_stats_island">28dp</dimen>
   <dimen name="trackzero_radius_maneuver_card">24dp</dimen>
   <dimen name="trackzero_radius_card">24dp</dimen>
@@ -19,12 +19,13 @@
   <dimen name="trackzero_radius_circle">999dp</dimen>
 
   <!-- Stroke and Border Tokens -->
-  <dimen name="trackzero_stroke_border">1dp</dimen>
+  <dimen name="trackzero_stroke_border">1.5dp</dimen>
 
   <!-- Component Layout Dimensions -->
-  <dimen name="trackzero_bottom_island_height">84dp</dimen>
-  <dimen name="trackzero_bottom_island_side_inset">16dp</dimen>
-  <dimen name="trackzero_bottom_island_bottom_offset">18dp</dimen>
+  <dimen name="trackzero_bottom_island_height">76dp</dimen>
+  <dimen name="trackzero_bottom_island_side_inset">12dp</dimen>
+  <dimen name="trackzero_bottom_island_bottom_offset">24dp</dimen>
+  <dimen name="trackzero_tab_icon_size">26dp</dimen>
   <dimen name="trackzero_circle_button_size">60dp</dimen>
   <dimen name="trackzero_touch_target_min">48dp</dimen>
 
@@ -34,6 +35,7 @@
   <dimen name="trackzero_text_display_title">28sp</dimen>
   <dimen name="trackzero_text_page_title">24sp</dimen>
   <dimen name="trackzero_text_card_title">22sp</dimen>
+  <dimen name="trackzero_text_tab_label">13sp</dimen>
   <dimen name="trackzero_text_metric_large">36sp</dimen>
   <dimen name="trackzero_text_metric_value">24sp</dimen>
   <dimen name="trackzero_text_unit">14sp</dimen>

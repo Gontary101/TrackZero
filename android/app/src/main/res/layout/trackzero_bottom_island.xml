@@ -14,6 +14,8 @@
   android:gravity="center_vertical"
   android:baselineAligned="false"
   android:elevation="8dp"
+  android:paddingStart="12dp"
+  android:paddingEnd="12dp"
   android:clickable="true"
   android:focusable="true">
 
@@ -32,8 +34,8 @@
 
     <ImageView
       android:id="@+id/trackzero_tab_map_icon"
-      android:layout_width="24dp"
-      android:layout_height="24dp"
+      android:layout_width="@dimen/trackzero_tab_icon_size"
+      android:layout_height="@dimen/trackzero_tab_icon_size"
       android:src="@drawable/trackzero_ic_tab_map"
       app:tint="@color/trackzero_tab_item_color"
       tools:tint="@color/trackzero_mint_accent"
@@ -43,22 +45,27 @@
       android:id="@+id/trackzero_tab_map_label"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginTop="@dimen/trackzero_space_xs"
+      android:layout_marginTop="3dp"
       android:text="@string/trackzero_tab_map"
       android:textColor="@color/trackzero_tab_item_color"
-      android:textSize="12sp"
+      android:textSize="@dimen/trackzero_text_tab_label"
       android:fontFamily="sans-serif-medium" />
 
     <ImageView
       android:id="@+id/trackzero_tab_map_dot"
       android:layout_width="4dp"
       android:layout_height="4dp"
-      android:layout_marginTop="3dp"
+      android:layout_marginTop="2dp"
       android:src="@drawable/trackzero_active_dot"
       android:visibility="gone"
       tools:visibility="visible"
       tools:ignore="ContentDescription" />
   </LinearLayout>
+
+  <View
+    android:layout_width="1dp"
+    android:layout_height="28dp"
+    android:background="@color/trackzero_tab_divider" />
 
   <!-- Routes Tab -->
   <LinearLayout
@@ -75,8 +82,8 @@
 
     <ImageView
       android:id="@+id/trackzero_tab_routes_icon"
-      android:layout_width="24dp"
-      android:layout_height="24dp"
+      android:layout_width="@dimen/trackzero_tab_icon_size"
+      android:layout_height="@dimen/trackzero_tab_icon_size"
       android:src="@drawable/trackzero_ic_tab_routes"
       app:tint="@color/trackzero_tab_item_color"
       tools:ignore="ContentDescription" />
@@ -85,21 +92,26 @@
       android:id="@+id/trackzero_tab_routes_label"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginTop="@dimen/trackzero_space_xs"
+      android:layout_marginTop="3dp"
       android:text="@string/trackzero_tab_routes"
       android:textColor="@color/trackzero_tab_item_color"
-      android:textSize="12sp"
+      android:textSize="@dimen/trackzero_text_tab_label"
       android:fontFamily="sans-serif-medium" />
 
     <ImageView
       android:id="@+id/trackzero_tab_routes_dot"
       android:layout_width="4dp"
       android:layout_height="4dp"
-      android:layout_marginTop="3dp"
+      android:layout_marginTop="2dp"
       android:src="@drawable/trackzero_active_dot"
       android:visibility="gone"
       tools:ignore="ContentDescription" />
   </LinearLayout>
+
+  <View
+    android:layout_width="1dp"
+    android:layout_height="28dp"
+    android:background="@color/trackzero_tab_divider" />
 
   <!-- Search Tab -->
   <LinearLayout
@@ -116,8 +128,8 @@
 
     <ImageView
       android:id="@+id/trackzero_tab_search_icon"
-      android:layout_width="24dp"
-      android:layout_height="24dp"
+      android:layout_width="@dimen/trackzero_tab_icon_size"
+      android:layout_height="@dimen/trackzero_tab_icon_size"
       android:src="@drawable/trackzero_ic_tab_search"
       app:tint="@color/trackzero_tab_item_color"
       tools:ignore="ContentDescription" />
@@ -126,21 +138,26 @@
       android:id="@+id/trackzero_tab_search_label"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginTop="@dimen/trackzero_space_xs"
+      android:layout_marginTop="3dp"
       android:text="@string/trackzero_tab_search"
       android:textColor="@color/trackzero_tab_item_color"
-      android:textSize="12sp"
+      android:textSize="@dimen/trackzero_text_tab_label"
       android:fontFamily="sans-serif-medium" />
 
     <ImageView
       android:id="@+id/trackzero_tab_search_dot"
       android:layout_width="4dp"
       android:layout_height="4dp"
-      android:layout_marginTop="3dp"
+      android:layout_marginTop="2dp"
       android:src="@drawable/trackzero_active_dot"
       android:visibility="gone"
       tools:ignore="ContentDescription" />
   </LinearLayout>
+
+  <View
+    android:layout_width="1dp"
+    android:layout_height="28dp"
+    android:background="@color/trackzero_tab_divider" />
 
   <!-- More Tab -->
   <LinearLayout
@@ -157,8 +174,8 @@
 
     <ImageView
       android:id="@+id/trackzero_tab_more_icon"
-      android:layout_width="24dp"
-      android:layout_height="24dp"
+      android:layout_width="@dimen/trackzero_tab_icon_size"
+      android:layout_height="@dimen/trackzero_tab_icon_size"
       android:src="@drawable/trackzero_ic_tab_more"
       app:tint="@color/trackzero_tab_item_color"
       tools:ignore="ContentDescription" />
@@ -167,17 +184,17 @@
       android:id="@+id/trackzero_tab_more_label"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginTop="@dimen/trackzero_space_xs"
+      android:layout_marginTop="3dp"
       android:text="@string/trackzero_tab_more"
       android:textColor="@color/trackzero_tab_item_color"
-      android:textSize="12sp"
+      android:textSize="@dimen/trackzero_text_tab_label"
       android:fontFamily="sans-serif-medium" />
 
     <ImageView
       android:id="@+id/trackzero_tab_more_dot"
       android:layout_width="4dp"
       android:layout_height="4dp"
-      android:layout_marginTop="3dp"
+      android:layout_marginTop="2dp"
       android:src="@drawable/trackzero_active_dot"
       android:visibility="gone"
       tools:ignore="ContentDescription" />

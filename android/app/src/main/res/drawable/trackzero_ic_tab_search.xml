@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- TrackZero Search Tab Icon -->
+<!-- TrackZero Search Tab Icon (Magnifying Glass) -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
   android:width="24dp"
   android:height="24dp"
   android:viewportWidth="24"
   android:viewportHeight="24">
+  <!-- Lens circle -->
   <path
-    android:pathData="M11,11 m-6,0 a6,6 0 1,1 12,0 a6,6 0 1,1 -12,0"
+    android:pathData="M10.5,10.5 m-6.2,0 a6.2,6.2 0 1,1 12.4,0 a6.2,6.2 0 1,1 -12.4,0"
     android:strokeColor="#FFFFFFFF"
-    android:strokeWidth="1.8" />
+    android:strokeWidth="2.4" />
+  <!-- Diagonal 45-deg handle -->
   <path
-    android:pathData="M15.5,15.5L20,20"
+    android:pathData="M15.2,15.2L20.5,20.5"
     android:strokeColor="#FFFFFFFF"
-    android:strokeWidth="1.8"
+    android:strokeWidth="2.6"
     android:strokeLineCap="round" />
 </vector>
