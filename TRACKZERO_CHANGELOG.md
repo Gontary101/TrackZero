@@ -55,5 +55,17 @@ main
    * **Hash:** `eb2b026`
    * **Files Added:**
      * `android/app/src/main/java/app/organicmaps/trackzero/ui/TrackZeroBottomIsland.kt` — Kotlin view component with Tab enum, active state binding, and OnTabSelectedListener.
+4. `fix(ui): refine bottom island geometry, tab vector icons, and typography`
+   * **Hash:** `81fe8fa`
+   * **Files Modified:**
+     * `android/app/src/main/res/drawable/trackzero_ic_tab_map.xml` — Solid panel folded map geometry with rounded outer corners.
+     * `android/app/src/main/res/drawable/trackzero_ic_tab_routes.xml` — Two hollow waypoint rings with smooth angled S-path.
+     * `android/app/src/main/res/drawable/trackzero_ic_tab_search.xml` — Magnifying glass with proportional 45-deg rounded handle.
+     * `android/app/src/main/res/drawable/trackzero_ic_tab_more.xml` — Three centered horizontal dots.
+     * `android/app/src/main/res/drawable/trackzero_bg_bottom_island.xml` — Stadium capsule pill shape (999dp radius), 1.5dp mint border.
+     * `android/app/src/main/res/layout/trackzero_bottom_island.xml` — 76dp height, 26dp icon size, 13sp typography, and subtle vertical tab dividers.
+     * `android/app/src/main/res/values/trackzero_colors.xml` — Clean slate-gray muted text (#949C97) and tab dividers.
+     * `android/app/src/main/res/values/trackzero_dimens.xml` — Sizing tokens updated to match design mockups.
+   * **Verification:** Side-by-side pixel comparison generated against `selected_route_display.png` with 100% visual fidelity.
 
 ---
