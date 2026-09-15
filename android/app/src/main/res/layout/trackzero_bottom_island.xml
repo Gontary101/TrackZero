@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- TrackZero Floating Bottom Island Navigation -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/trackzero_bottom_island"
+  android:layout_width="match_parent"
+  android:layout_height="@dimen/trackzero_bottom_island_height"
+  android:layout_marginStart="@dimen/trackzero_bottom_island_side_inset"
+  android:layout_marginEnd="@dimen/trackzero_bottom_island_side_inset"
+  android:layout_marginBottom="@dimen/trackzero_bottom_island_bottom_offset"
+  android:orientation="horizontal"
+  android:background="@drawable/trackzero_bg_bottom_island"
+  android:gravity="center_vertical"
+  android:baselineAligned="false"
+  android:elevation="8dp"
+  android:clickable="true"
+  android:focusable="true">
+
+  <!-- Map Tab -->
+  <LinearLayout
+    android:id="@+id/trackzero_tab_map"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="?selectableItemBackgroundBorderless"
+    android:contentDescription="@string/trackzero_tab_map">
+
+    <ImageView
+      android:id="@+id/trackzero_tab_map_icon"
+      android:layout_width="24dp"
+      android:layout_height="24dp"
+      android:src="@drawable/trackzero_ic_tab_map"
+      app:tint="@color/trackzero_tab_item_color"
+      tools:tint="@color/trackzero_mint_accent"
+      tools:ignore="ContentDescription" />
+
+    <TextView
+      android:id="@+id/trackzero_tab_map_label"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/trackzero_space_xs"
+      android:text="@string/trackzero_tab_map"
+      android:textColor="@color/trackzero_tab_item_color"
+      android:textSize="12sp"
+      android:fontFamily="sans-serif-medium" />
+
+    <ImageView
+      android:id="@+id/trackzero_tab_map_dot"
+      android:layout_width="4dp"
+      android:layout_height="4dp"
+      android:layout_marginTop="3dp"
+      android:src="@drawable/trackzero_active_dot"
+      android:visibility="gone"
+      tools:visibility="visible"
+      tools:ignore="ContentDescription" />
+  </LinearLayout>
+
+  <!-- Routes Tab -->
+  <LinearLayout
+    android:id="@+id/trackzero_tab_routes"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="?selectableItemBackgroundBorderless"
+    android:contentDescription="@string/trackzero_tab_routes">
+
+    <ImageView
+      android:id="@+id/trackzero_tab_routes_icon"
+      android:layout_width="24dp"
+      android:layout_height="24dp"
+      android:src="@drawable/trackzero_ic_tab_routes"
+      app:tint="@color/trackzero_tab_item_color"
+      tools:ignore="ContentDescription" />
+
+    <TextView
+      android:id="@+id/trackzero_tab_routes_label"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/trackzero_space_xs"
+      android:text="@string/trackzero_tab_routes"
+      android:textColor="@color/trackzero_tab_item_color"
+      android:textSize="12sp"
+      android:fontFamily="sans-serif-medium" />
+
+    <ImageView
+      android:id="@+id/trackzero_tab_routes_dot"
+      android:layout_width="4dp"
+      android:layout_height="4dp"
+      android:layout_marginTop="3dp"
+      android:src="@drawable/trackzero_active_dot"
+      android:visibility="gone"
+      tools:ignore="ContentDescription" />
+  </LinearLayout>
+
+  <!-- Search Tab -->
+  <LinearLayout
+    android:id="@+id/trackzero_tab_search"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="?selectableItemBackgroundBorderless"
+    android:contentDescription="@string/trackzero_tab_search">
+
+    <ImageView
+      android:id="@+id/trackzero_tab_search_icon"
+      android:layout_width="24dp"
+      android:layout_height="24dp"
+      android:src="@drawable/trackzero_ic_tab_search"
+      app:tint="@color/trackzero_tab_item_color"
+      tools:ignore="ContentDescription" />
+
+    <TextView
+      android:id="@+id/trackzero_tab_search_label"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/trackzero_space_xs"
+      android:text="@string/trackzero_tab_search"
+      android:textColor="@color/trackzero_tab_item_color"
+      android:textSize="12sp"
+      android:fontFamily="sans-serif-medium" />
+
+    <ImageView
+      android:id="@+id/trackzero_tab_search_dot"
+      android:layout_width="4dp"
+      android:layout_height="4dp"
+      android:layout_marginTop="3dp"
+      android:src="@drawable/trackzero_active_dot"
+      android:visibility="gone"
+      tools:ignore="ContentDescription" />
+  </LinearLayout>
+
+  <!-- More Tab -->
+  <LinearLayout
+    android:id="@+id/trackzero_tab_more"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="?selectableItemBackgroundBorderless"
+    android:contentDescription="@string/trackzero_tab_more">
+
+    <ImageView
+      android:id="@+id/trackzero_tab_more_icon"
+      android:layout_width="24dp"
+      android:layout_height="24dp"
+      android:src="@drawable/trackzero_ic_tab_more"
+      app:tint="@color/trackzero_tab_item_color"
+      tools:ignore="ContentDescription" />
+
+    <TextView
+      android:id="@+id/trackzero_tab_more_label"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/trackzero_space_xs"
+      android:text="@string/trackzero_tab_more"
+      android:textColor="@color/trackzero_tab_item_color"
+      android:textSize="12sp"
+      android:fontFamily="sans-serif-medium" />
+
+    <ImageView
+      android:id="@+id/trackzero_tab_more_dot"
+      android:layout_width="4dp"
+      android:layout_height="4dp"
+      android:layout_marginTop="3dp"
+      android:src="@drawable/trackzero_active_dot"
+      android:visibility="gone"
+      tools:ignore="ContentDescription" />
+  </LinearLayout>
+
+</LinearLayout>
