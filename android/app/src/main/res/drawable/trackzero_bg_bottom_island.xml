@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- TrackZero Floating Bottom Island Background -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+  android:shape="rectangle">
+  <solid android:color="@color/trackzero_surface_black" />
+  <corners android:radius="@dimen/trackzero_radius_bottom_island" />
+  <stroke
+    android:width="@dimen/trackzero_stroke_border"
+    android:color="@color/trackzero_mint_border" />
+</shape>
