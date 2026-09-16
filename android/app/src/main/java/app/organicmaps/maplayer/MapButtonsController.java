@@ -205,6 +205,32 @@ public class MapButtonsController extends Fragment
             {
               mMapButtonClickListener.onMapButtonClick(MapButtons.myPosition);
             }
+
+            @Override
+            public void openSearch()
+            {
+              mMapButtonClickListener.onMapButtonClick(MapButtons.search);
+            }
+
+            @Override
+            public void openMore()
+            {
+              mMapButtonClickListener.onMapButtonClick(MapButtons.menu);
+            }
+
+            @Override
+            public void openRoutes()
+            {
+              if (getActivity() instanceof MwmActivity mwmActivity)
+                mwmActivity.showTrackZeroRoutes();
+            }
+
+            @Override
+            public void openMap()
+            {
+              if (getActivity() instanceof MwmActivity mwmActivity)
+                mwmActivity.hideTrackZeroRoutes();
+            }
           }
       );
     }

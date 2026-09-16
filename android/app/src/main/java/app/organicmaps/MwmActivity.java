@@ -73,6 +73,9 @@ import app.organicmaps.routing.RoutingErrorDialogFragment;
 import app.organicmaps.routing.RoutingPlanController;
 import app.organicmaps.routing.RoutingPlanFragment;
 import app.organicmaps.routing.RoutingPlanViewModel;
+import app.organicmaps.trackzero.data.TrackZeroRouteItem;
+import app.organicmaps.trackzero.ui.TrackZeroBottomIsland;
+import app.organicmaps.trackzero.ui.TrackZeroRoutesFragment;
 import app.organicmaps.sdk.ChoosePositionMode;
 import app.organicmaps.sdk.Framework;
 import app.organicmaps.sdk.Map;
@@ -774,6 +777,50 @@ public class MwmActivity extends BaseMwmFragmentActivity
     return true;
   }
 
+  @Nullable
+  private MapButtonsController getMapButtonsController()
+  {
+    return (MapButtonsController) getSupportFragmentManager().findFragmentById(R.id.map_buttons);
+  }
+
+  public void showTrackZeroRoutes()
+  {
+    final View container = findViewById(R.id.trackzero_routes_container);
+    if (container == null)
+      return;
+
+    container.setVisibility(View.VISIBLE);
+    Fragment fragment = getSupportFragmentManager().findFragmentByTag(TrackZeroRoutesFragment.TAG);
+    if (fragment == null)
+    {
+      getSupportFragmentManager().beginTransaction()
+          .add(R.id.trackzero_routes_container, TrackZeroRoutesFragment.Companion.newInstance(), TrackZeroRoutesFragment.TAG)
+          .commit();
+    }
+  }
+
+  public boolean hideTrackZeroRoutes()
+  {
+    final View container = findViewById(R.id.trackzero_routes_container);
+    if (container != null && container.getVisibility() == View.VISIBLE)
+    {
+      container.setVisibility(View.GONE);
+      final MapButtonsController controller = getMapButtonsController();
+      if (controller != null && controller.getTrackZeroOverlayController() != null)
+        controller.getTrackZeroOverlayController().selectTab(TrackZeroBottomIsland.Tab.MAP, false);
+      return true;
+    }
+    return false;
+  }
+
+  public void onTrackZeroRouteSelected(@NonNull TrackZeroRouteItem route)
+  {
+    hideTrackZeroRoutes();
+    final MapButtonsController controller = getMapButtonsController();
+    if (controller != null && controller.getTrackZeroOverlayController() != null)
+      controller.getTrackZeroOverlayController().showRouteCard(route);
+  }
+
   private void showBottomSheet(String id)
   {
     MenuBottomSheetFragment.newInstance(id).show(getSupportFragmentManager(), id);
@@ -1048,6 +1095,9 @@ public class MwmActivity extends BaseMwmFragmentActivity
   @Override
   public boolean handleBackPress()
   {
+    if (hideTrackZeroRoutes())
+      return true;
+
     final RoutingController routingController = RoutingController.get();
     return (closeBottomSheet(MAIN_MENU_ID) || closeBottomSheet(LAYERS_MENU_ID) || collapseNavMenu() || closePlacePage()
             || closePositionChooser() || closeSearchFragment() || routingController.resetToPlanningStateIfNavigating()
