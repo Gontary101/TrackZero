@@ -18,9 +18,29 @@ import app.organicmaps.sdk.display.DisplayType;
 import app.organicmaps.sdk.util.Utils;
 import app.organicmaps.sdk.util.log.Logger;
 
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+
 public class MapView extends SurfaceView
 {
   private static final String TAG = MapView.class.getSimpleName();
+
+  public interface OnTouchEventListener
+  {
+    void onTouchEvent(@NonNull MotionEvent event);
+  }
+
+  private final List<OnTouchEventListener> mTouchEventListeners = new CopyOnWriteArrayList<>();
+
+  public void addOnTouchEventListener(@NonNull OnTouchEventListener listener)
+  {
+    mTouchEventListeners.add(listener);
+  }
+
+  public void removeOnTouchEventListener(@NonNull OnTouchEventListener listener)
+  {
+    mTouchEventListeners.remove(listener);
+  }
 
   private class SurfaceHolderCallback implements SurfaceHolder.Callback
   {
@@ -90,6 +110,9 @@ public class MapView extends SurfaceView
   @Override
   public boolean onTouchEvent(@NonNull MotionEvent event)
   {
+    for (OnTouchEventListener listener : mTouchEventListeners)
+      listener.onTouchEvent(event);
+
     int action = event.getActionMasked();
     int pointerIndex = event.getActionIndex();
     switch (action)

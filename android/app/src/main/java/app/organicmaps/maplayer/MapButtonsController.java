@@ -26,6 +26,7 @@ import app.organicmaps.R;
 import app.organicmaps.trackzero.ui.TrackZeroMapOverlayController;
 import app.organicmaps.routing.RoutingPlanViewModel;
 import app.organicmaps.sdk.Framework;
+import app.organicmaps.sdk.MapView;
 import app.organicmaps.sdk.downloader.MapManager;
 import app.organicmaps.sdk.downloader.UpdateInfo;
 import app.organicmaps.sdk.location.TrackRecorder;
@@ -499,6 +500,21 @@ public class MapButtonsController extends Fragment
     ViewCompat.setOnApplyWindowInsetsListener(
         view, WindowInsetUtils.PaddingInsetsListener.allSides(WindowInsetsCompat.Type.systemBars()
                                                               | WindowInsetsCompat.Type.displayCutout()));
+
+    if (mTrackZeroOverlayController != null)
+    {
+      final MapView mapView = requireActivity().findViewById(R.id.map);
+      if (mapView != null)
+        mTrackZeroOverlayController.attachMapView(mapView);
+    }
+  }
+
+  @Override
+  public void onDestroyView()
+  {
+    super.onDestroyView();
+    if (mTrackZeroOverlayController != null)
+      mTrackZeroOverlayController.detachMapView();
   }
 
   @Override
