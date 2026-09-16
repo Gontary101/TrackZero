@@ -198,4 +198,20 @@ main
    * **Verification:** `./gradlew app:ktlintCheck -Parm64`, Kotlin/Java compilation, and unit tests all passed cleanly (`BUILD SUCCESSFUL`).
 2. `Merge task 'feat/ui-map-controls' into int/ui-map-overlay` (Merge commit: `e159b85`)
 
+#### Task: `feat/ui-map-insets`
+* **Parent Branch:** `int/ui-map-overlay`
+* **Objective:** Refine bottom navigation island geometry by eliminating redundant internal margins and enforcing explicit 76dp height, preventing double-inset/double-margin displacement over Organic Maps MapView.
+* **Scope Firewall:** Layout dimensions and insets refinement only, zero functional logic changes.
+
+##### Commits:
+1. `feat(ui): refine bottom island safe-area geometry and eliminate redundant margins`
+   * **Hash:** `a97ffb1`
+   * **Files Modified:**
+     * `android/app/src/main/res/layout/trackzero_bottom_island.xml` — Removed internal margins (`layout_marginStart`, `layout_marginEnd`, `layout_marginBottom`) from root LinearLayout.
+     * `android/app/src/main/res/layout/trackzero_map_overlay.xml` — Enforced explicit `layout_height="@dimen/trackzero_bottom_island_height"` with outer margins.
+     * `android/app/src/main/res/layout/trackzero_fragment_routes.xml` — Enforced explicit `layout_height="@dimen/trackzero_bottom_island_height"` with outer margins.
+   * **Verification:** `./gradlew app:ktlintCheck -Parm64`, Kotlin/Java compilation, and unit tests all passed cleanly (`BUILD SUCCESSFUL`).
+2. `Merge task 'feat/ui-map-insets' into int/ui-map-overlay` (Merge commit: `68656de`)
+
 ---
+
