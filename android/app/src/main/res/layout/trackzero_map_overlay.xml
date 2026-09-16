@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- TrackZero Main Map Screen Overlay Shell -->
+<androidx.constraintlayout.widget.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/trackzero_map_overlay"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:clipChildren="false"
+  android:clipToPadding="false">
+
+  <!-- Right-side Circular Map Controls (Zoom In, Zoom Out, My Location) -->
+  <include
+    android:id="@+id/trackzero_map_controls"
+    layout="@layout/trackzero_map_controls"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/trackzero_space_xl"
+    android:layout_marginEnd="@dimen/trackzero_space_md"
+    android:layout_marginBottom="@dimen/trackzero_space_md"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toTopOf="@+id/trackzero_route_card"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintVertical_bias="1.0" />
+
+  <!-- Featured Route Card (Hidden by default in Browsing state) -->
+  <app.organicmaps.trackzero.ui.TrackZeroRouteCard
+    android:id="@+id/trackzero_route_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/trackzero_space_md"
+    android:layout_marginEnd="@dimen/trackzero_space_md"
+    android:layout_marginBottom="@dimen/trackzero_space_md"
+    android:visibility="gone"
+    app:layout_constraintBottom_toTopOf="@+id/trackzero_bottom_island"
+    tools:visibility="visible" />
+
+  <!-- Floating Bottom Navigation Island -->
+  <app.organicmaps.trackzero.ui.TrackZeroBottomIsland
+    android:id="@+id/trackzero_bottom_island"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/trackzero_bottom_island_height"
+    android:layout_marginStart="@dimen/trackzero_bottom_island_side_inset"
+    android:layout_marginEnd="@dimen/trackzero_bottom_island_side_inset"
+    android:layout_marginBottom="@dimen/trackzero_bottom_island_bottom_offset"
+    app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

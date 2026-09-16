@@ -41,7 +41,8 @@
     android:layout_alignParentEnd="true"
     android:clipChildren="false"
     android:clipToPadding="false"
-    android:padding="@dimen/nav_frame_padding">
+    android:padding="@dimen/nav_frame_padding"
+    android:visibility="gone">
     <include
       layout="@layout/map_buttons_zoom"
       android:layout_width="wrap_content"
@@ -63,5 +64,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_alignParentBottom="true"
-    android:layout_alignParentEnd="true" />
+    android:layout_alignParentEnd="true"
+    android:visibility="gone" />
+
+  <!-- TrackZero Map Screen Overlay Host -->
+  <include
+    android:id="@+id/trackzero_map_overlay"
+    layout="@layout/trackzero_map_overlay"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
 </RelativeLayout>

@@ -158,4 +158,96 @@ main
    * **Verification:** Zero unused tokens remaining (verified via AST scan: 6 colors, 34 dimens, 14 strings, 17 drawables all active with 0 unused). `ktlintCheck`, `detektCheck`, Kotlin compilation, and unit tests all passed cleanly (`BUILD SUCCESSFUL`).
 2. `Merge task 'cleanup/ui-dead-code' into ws/ui` (Merge commit: `127541b`)
 
+### Integration: `int/ui-map-overlay`
+* **Parent Branch:** `ws/ui`
+* **Objective:** Mount TrackZero UI shell over Organic Maps MapView with clean ownership boundaries, thin map action bridges, and deterministic state rendering.
+
+#### Task: `feat/ui-map-overlay-host`
+* **Parent Branch:** `int/ui-map-overlay`
+* **Objective:** Mount TrackZero map overlay host into Organic Maps map button hierarchy and replace visible right-side map controls while preserving native map behavior.
+* **Scope Firewall:** No route-card animations, no fragment navigation, no route start, no map-drag collapse, minimal overlay host hook only.
+
+##### Commits:
+1. `feat(ui): mount TrackZero map overlay host and wire native bridge`
+   * **Hash:** `c85636d`
+   * **Files Added:**
+     * `android/app/src/main/res/layout/trackzero_map_overlay.xml` — TrackZero overlay container hosting circular map controls, route card (hidden by default), and bottom island.
+     * `android/app/src/main/java/app/organicmaps/trackzero/ui/MapOverlayState.kt` — Explicit sealed state model (`Browsing`, `RoutePreview`, `MapInteracting`).
+     * `android/app/src/main/java/app/organicmaps/trackzero/ui/TrackZeroMapOverlayController.kt` — Presentation controller binding TrackZero controls to native Organic Maps action bridge.
+   * **Files Modified:**
+     * `android/app/src/main/res/layout/map_buttons_layout_regular.xml` — Mounted TrackZero overlay host and set superseded legacy buttons to `gone`.
+     * `android/app/src/main/java/app/organicmaps/maplayer/MapButtonsController.java` — Thin native action bridge forwarding zoom and location events to `mMapButtonClickListener`.
+   * **Verification:** `./gradlew app:ktlintCheck -Parm64`, Kotlin/Java compilation, and unit tests all passed cleanly (`BUILD SUCCESSFUL`).
+2. `Merge task 'feat/ui-map-overlay-host' into int/ui-map-overlay` (Merge commit: `06bb971`)
+
+#### Task: `feat/ui-map-controls`
+* **Parent Branch:** `int/ui-map-overlay`
+* **Objective:** Encapsulate TrackZero map controls into TrackZeroMapControls, wire GPS location state updates (follow, rotate, pending, not follow) to the circular location button, and apply safe vertical constraints to avoid collision on all screen aspect ratios.
+* **Scope Firewall:** Contained controls component and presentation updates, zero modifications to native Organic Maps GPS logic.
+
+##### Commits:
+1. `feat(ui): encapsulate map controls and wire dynamic location state updates`
+   * **Hash:** `7a84eef`
+   * **Files Added:**
+     * `android/app/src/main/java/app/organicmaps/trackzero/ui/TrackZeroMapControls.kt` — Controller managing circular map controls and GPS mode icon/tint updates.
+   * **Files Modified:**
+     * `android/app/src/main/res/layout/trackzero_map_controls.xml` — Added `iv_trackzero_my_location` ID for dynamic icon updates.
+     * `android/app/src/main/res/layout/trackzero_map_overlay.xml` — Added safe top constraint and vertical bias to map controls include.
+     * `android/app/src/main/java/app/organicmaps/trackzero/ui/TrackZeroMapOverlayController.kt` — Integrated `TrackZeroMapControls` and exposed `updateMyPositionMode()`.
+     * `android/app/src/main/java/app/organicmaps/maplayer/MapButtonsController.java` — Forwarded `updateNavMyPositionButton` to `mTrackZeroOverlayController`.
+   * **Verification:** `./gradlew app:ktlintCheck -Parm64`, Kotlin/Java compilation, and unit tests all passed cleanly (`BUILD SUCCESSFUL`).
+2. `Merge task 'feat/ui-map-controls' into int/ui-map-overlay` (Merge commit: `e159b85`)
+
+#### Task: `feat/ui-map-insets`
+* **Parent Branch:** `int/ui-map-overlay`
+* **Objective:** Refine bottom navigation island geometry by eliminating redundant internal margins and enforcing explicit 76dp height, preventing double-inset/double-margin displacement over Organic Maps MapView.
+* **Scope Firewall:** Layout dimensions and insets refinement only, zero functional logic changes.
+
+##### Commits:
+1. `feat(ui): refine bottom island safe-area geometry and eliminate redundant margins`
+   * **Hash:** `a97ffb1`
+   * **Files Modified:**
+     * `android/app/src/main/res/layout/trackzero_bottom_island.xml` — Removed internal margins (`layout_marginStart`, `layout_marginEnd`, `layout_marginBottom`) from root LinearLayout.
+     * `android/app/src/main/res/layout/trackzero_map_overlay.xml` — Enforced explicit `layout_height="@dimen/trackzero_bottom_island_height"` with outer margins.
+     * `android/app/src/main/res/layout/trackzero_fragment_routes.xml` — Enforced explicit `layout_height="@dimen/trackzero_bottom_island_height"` with outer margins.
+   * **Verification:** `./gradlew app:ktlintCheck -Parm64`, Kotlin/Java compilation, and unit tests all passed cleanly (`BUILD SUCCESSFUL`).
+2. `Merge task 'feat/ui-map-insets' into int/ui-map-overlay` (Merge commit: `68656de`)
+
+#### Task: `feat/ui-map-route-card-hook`
+* **Parent Branch:** `int/ui-map-overlay`
+* **Objective:** Implement featured route card presentation, state transitions (`RoutePreview`, `Browsing`, `MapInteracting`), start ride callback bridge, and non-intrusive gesture motion detection via MapView.
+* **Scope Firewall:** Route card presentation and gesture hooks only, zero modifications to native map touch handling or search routing.
+
+##### Commits:
+1. `feat(ui): hook route card state transitions and map interaction gestures`
+   * **Hash:** `b84e422`
+   * **Files Added:**
+     * `android/app/src/test/java/app/organicmaps/trackzero/ui/TrackZeroMapOverlayControllerTest.kt` — Unit tests covering initial browsing state, route card presentation, start ride hook, map interaction minimization, restoring preview on interaction end, and detaching safely.
+   * **Files Modified:**
+     * `android/sdk/src/main/java/app/organicmaps/sdk/MapView.java` — Added `OnTouchEventListener` callback interface and listener registry to observe map gestures without consuming touches.
+     * `android/app/src/main/java/app/organicmaps/trackzero/ui/TrackZeroMapOverlayController.kt` — Implemented `showRouteCard()`, `hideRouteCard()`, `onMapInteractionStarted()`, `onMapInteractionEnded()`, `attachMapView()`, `detachMapView()`, and `OnRouteActionListener`.
+     * `android/app/src/main/java/app/organicmaps/maplayer/MapButtonsController.java` — Wired `attachMapView` in `onViewCreated` and `detachMapView` in `onDestroyView`.
+   * **Verification:** `./gradlew app:ktlintCheck -Parm64`, Kotlin/Java compilation, and unit tests all passed cleanly (`BUILD SUCCESSFUL`).
+2. `Merge task 'feat/ui-map-route-card-hook' into int/ui-map-overlay` (Merge commit: `f02d91e`)
+
+#### Task: `feat/ui-map-tab-routing`
+* **Parent Branch:** `int/ui-map-overlay`
+* **Objective:** Connect TrackZeroBottomIsland navigation tabs (Map, Routes, Search, More), overlay full-screen TrackZeroRoutesFragment with zero MapView reload/destruction, and wire Search/More delegation to mature Organic Maps menus.
+* **Scope Firewall:** Overlay presentation and tab delegation only; zero map destruction, zero changes to native search/menu implementations.
+
+##### Commits:
+1. `feat(ui): wire bottom island tab routing and overlay Routes screen`
+   * **Hash:** `b0924fa`
+   * **Files Added:**
+     * `android/app/src/main/java/app/organicmaps/trackzero/ui/TrackZeroRoutesFragment.kt` — Full-screen Routes fragment binding curated route cards, category filter pills, system insets padding, and bottom island tab actions.
+   * **Files Modified:**
+     * `android/app/src/main/res/layout/activity_map.xml` — Mounted `trackzero_routes_container` FrameLayout overlay over CoordinatorLayout.
+     * `android/app/src/main/java/app/organicmaps/trackzero/ui/TrackZeroMapOverlayController.kt` — Expanded `MapActionsBridge` with `openSearch()`, `openMore()`, `openRoutes()`, `openMap()`, wired `bottomIsland.listener`, and exposed `selectTab()`.
+     * `android/app/src/main/java/app/organicmaps/maplayer/MapButtonsController.java` — Implemented tab routing bridge delegates for search, menu, and Routes screen presentation.
+     * `android/app/src/main/java/app/organicmaps/MwmActivity.java` — Implemented `showTrackZeroRoutes()`, `hideTrackZeroRoutes()`, `onTrackZeroRouteSelected()`, and wired back-press handling.
+     * `android/app/src/test/java/app/organicmaps/trackzero/ui/TrackZeroMapOverlayControllerTest.kt` — Added unit test verifying tab selection delegation.
+   * **Verification:** `./gradlew app:ktlintCheck -Parm64`, Kotlin/Java compilation, and unit tests all passed cleanly (`BUILD SUCCESSFUL`).
+2. `Merge task 'feat/ui-map-tab-routing' into int/ui-map-overlay` (Merge commit: `1db47fa`)
+
 ---
+
