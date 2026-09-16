@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- TrackZero Routes Browse Screen Layout -->
+<androidx.constraintlayout.widget.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/trackzero_routes_root"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/trackzero_oled_black">
+
+  <!-- Header: ROUTES Dot-Matrix Wordmark -->
+  <ImageView
+    android:id="@+id/iv_routes_header_title"
+    android:layout_width="wrap_content"
+    android:layout_height="56dp"
+    android:layout_marginStart="@dimen/trackzero_space_card_padding"
+    android:layout_marginTop="@dimen/trackzero_space_xl"
+    android:adjustViewBounds="true"
+    android:contentDescription="@string/trackzero_routes_title"
+    android:src="@drawable/trackzero_wordmark_routes"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <!-- Filter Bar: Local | Favorites | Downloaded -->
+  <LinearLayout
+    android:id="@+id/layout_routes_filter_bar"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/trackzero_routes_filter_height"
+    android:layout_marginStart="@dimen/trackzero_space_md"
+    android:layout_marginTop="@dimen/trackzero_space_md"
+    android:layout_marginEnd="@dimen/trackzero_space_md"
+    android:background="@drawable/trackzero_bg_routes_filter_bar"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="3dp"
+    app:layout_constraintTop_toBottomOf="@+id/tv_routes_header_title">
+
+    <!-- Local Tab (Selected by default) -->
+    <TextView
+      android:id="@+id/tab_filter_local"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:background="@drawable/trackzero_bg_routes_filter_pill_selected"
+      android:clickable="true"
+      android:focusable="true"
+      android:gravity="center"
+      android:text="@string/trackzero_filter_local"
+      android:textColor="@color/trackzero_oled_black"
+      android:textSize="14sp"
+      android:textStyle="bold" />
+
+    <!-- Favorites Tab -->
+    <TextView
+      android:id="@+id/tab_filter_favorites"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:clickable="true"
+      android:focusable="true"
+      android:gravity="center"
+      android:text="@string/trackzero_filter_favorites"
+      android:textColor="@color/trackzero_primary_white"
+      android:textSize="14sp"
+      android:textStyle="bold" />
+
+    <!-- Vertical Divider -->
+    <View
+      android:layout_width="1dp"
+      android:layout_height="24dp"
+      android:background="@color/trackzero_tab_divider" />
+
+    <!-- Downloaded Tab -->
+    <TextView
+      android:id="@+id/tab_filter_downloaded"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:clickable="true"
+      android:focusable="true"
+      android:gravity="center"
+      android:text="@string/trackzero_filter_downloaded"
+      android:textColor="@color/trackzero_primary_white"
+      android:textSize="14sp"
+      android:textStyle="bold" />
+
+  </LinearLayout>
+
+  <!-- Route Cards RecyclerView -->
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/rv_routes_list"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_marginStart="@dimen/trackzero_space_md"
+    android:layout_marginTop="@dimen/trackzero_space_md"
+    android:layout_marginEnd="@dimen/trackzero_space_md"
+    android:clipToPadding="false"
+    android:paddingBottom="120dp"
+    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/layout_routes_filter_bar"
+    tools:listitem="@layout/trackzero_item_route_card" />
+
+  <!-- Floating Bottom Navigation Island -->
+  <app.organicmaps.trackzero.ui.TrackZeroBottomIsland
+    android:id="@+id/trackzero_bottom_island"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/trackzero_bottom_island_side_inset"
+    android:layout_marginEnd="@dimen/trackzero_bottom_island_side_inset"
+    android:layout_marginBottom="@dimen/trackzero_bottom_island_bottom_offset"
+    app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

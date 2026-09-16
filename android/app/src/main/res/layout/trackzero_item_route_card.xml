@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- TrackZero Route List Item Card Layout -->
+<androidx.constraintlayout.widget.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/trackzero_route_item_root"
+  android:layout_width="match_parent"
+  android:layout_height="@dimen/trackzero_route_list_card_height"
+  android:layout_marginBottom="@dimen/trackzero_route_list_card_spacing"
+  android:background="@drawable/trackzero_bg_route_list_card"
+  android:paddingStart="@dimen/trackzero_space_md"
+  android:paddingEnd="@dimen/trackzero_space_md">
+
+  <!-- Left: Route Silhouette / Thumbnail -->
+  <ImageView
+    android:id="@+id/iv_route_thumbnail"
+    android:layout_width="@dimen/trackzero_route_list_thumb_width"
+    android:layout_height="0dp"
+    android:layout_marginTop="@dimen/trackzero_space_sm"
+    android:layout_marginBottom="@dimen/trackzero_space_sm"
+    android:importantForAccessibility="no"
+    android:scaleType="fitCenter"
+    android:src="@drawable/trackzero_ic_route_silhouette_1"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <!-- Vertical Divider after thumbnail -->
+  <View
+    android:id="@+id/v_thumb_divider"
+    android:layout_width="1dp"
+    android:layout_height="0dp"
+    android:layout_marginStart="@dimen/trackzero_space_sm"
+    android:layout_marginTop="@dimen/trackzero_space_md"
+    android:layout_marginBottom="@dimen/trackzero_space_md"
+    android:background="@color/trackzero_tab_divider"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toEndOf="@+id/iv_route_thumbnail"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <!-- Route Title -->
+  <TextView
+    android:id="@+id/tv_route_title"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/trackzero_space_md"
+    android:layout_marginTop="@dimen/trackzero_space_sm"
+    android:layout_marginEnd="@dimen/trackzero_space_sm"
+    android:ellipsize="end"
+    android:maxLines="1"
+    android:textColor="@color/trackzero_primary_white"
+    android:textSize="@dimen/trackzero_text_route_list_title"
+    android:textStyle="bold"
+    app:layout_constraintEnd_toStartOf="@+id/btn_route_chevron"
+    app:layout_constraintStart_toEndOf="@+id/v_thumb_divider"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:text="Col de la Loze" />
+
+  <!-- Distance Value -->
+  <TextView
+    android:id="@+id/tv_distance_value"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/trackzero_space_xs"
+    android:textColor="@color/trackzero_primary_white"
+    android:textSize="@dimen/trackzero_text_route_list_metric_val"
+    android:textStyle="bold"
+    app:layout_constraintStart_toStartOf="@+id/tv_route_title"
+    app:layout_constraintTop_toBottomOf="@+id/tv_route_title"
+    tools:text="56.7" />
+
+  <!-- Distance Unit -->
+  <TextView
+    android:id="@+id/tv_distance_unit"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="3dp"
+    android:text="@string/trackzero_unit_km"
+    android:textColor="@color/trackzero_muted_text"
+    android:textSize="@dimen/trackzero_text_route_list_unit"
+    android:textStyle="bold"
+    app:layout_constraintBaseline_toBaselineOf="@+id/tv_distance_value"
+    app:layout_constraintStart_toEndOf="@+id/tv_distance_value" />
+
+  <!-- Distance Label -->
+  <TextView
+    android:id="@+id/tv_distance_label"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:letterSpacing="0.08"
+    android:text="@string/trackzero_distance"
+    android:textAllCaps="true"
+    android:textColor="@color/trackzero_muted_text"
+    android:textSize="@dimen/trackzero_text_route_list_label"
+    android:textStyle="bold"
+    app:layout_constraintStart_toStartOf="@+id/tv_distance_value"
+    app:layout_constraintTop_toBottomOf="@+id/tv_distance_value" />
+
+  <!-- Metric Divider -->
+  <View
+    android:id="@+id/v_metric_divider"
+    android:layout_width="1dp"
+    android:layout_height="0dp"
+    android:layout_marginStart="@dimen/trackzero_space_md"
+    android:background="@color/trackzero_tab_divider"
+    app:layout_constraintBottom_toBottomOf="@+id/tv_distance_label"
+    app:layout_constraintStart_toEndOf="@+id/tv_distance_unit"
+    app:layout_constraintTop_toTopOf="@+id/tv_distance_value" />
+
+  <!-- Elevation Value -->
+  <TextView
+    android:id="@+id/tv_elevation_value"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/trackzero_space_md"
+    android:textColor="@color/trackzero_primary_white"
+    android:textSize="@dimen/trackzero_text_route_list_metric_val"
+    android:textStyle="bold"
+    app:layout_constraintStart_toEndOf="@+id/v_metric_divider"
+    app:layout_constraintTop_toTopOf="@+id/tv_distance_value"
+    tools:text="842" />
+
+  <!-- Elevation Unit -->
+  <TextView
+    android:id="@+id/tv_elevation_unit"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="3dp"
+    android:text="@string/trackzero_unit_m"
+    android:textColor="@color/trackzero_muted_text"
+    android:textSize="@dimen/trackzero_text_route_list_unit"
+    android:textStyle="bold"
+    app:layout_constraintBaseline_toBaselineOf="@+id/tv_elevation_value"
+    app:layout_constraintStart_toEndOf="@+id/tv_elevation_value" />
+
+  <!-- Elevation Label -->
+  <TextView
+    android:id="@+id/tv_elevation_label"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:letterSpacing="0.08"
+    android:text="@string/trackzero_elevation"
+    android:textAllCaps="true"
+    android:textColor="@color/trackzero_muted_text"
+    android:textSize="@dimen/trackzero_text_route_list_label"
+    android:textStyle="bold"
+    app:layout_constraintStart_toStartOf="@+id/tv_elevation_value"
+    app:layout_constraintTop_toBottomOf="@+id/tv_elevation_value" />
+
+  <!-- Right: Circular Chevron Affordance Button -->
+  <FrameLayout
+    android:id="@+id/btn_route_chevron"
+    android:layout_width="@dimen/trackzero_route_list_chevron_size"
+    android:layout_height="@dimen/trackzero_route_list_chevron_size"
+    android:background="@drawable/trackzero_bg_circle_chevron"
+    android:clickable="true"
+    android:focusable="true"
+    android:importantForAccessibility="no"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <ImageView
+      android:layout_width="20dp"
+      android:layout_height="20dp"
+      android:layout_gravity="center"
+      android:importantForAccessibility="no"
+      android:src="@drawable/trackzero_ic_chevron_right" />
+  </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

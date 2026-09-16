@@ -11,4 +11,8 @@
   <string name="trackzero_elevation">Elevation</string>
   <string name="trackzero_unit_km">km</string>
   <string name="trackzero_unit_m">m</string>
+  <string name="trackzero_routes_title">ROUTES</string>
+  <string name="trackzero_filter_local">Local</string>
+  <string name="trackzero_filter_favorites">Favorites</string>
+  <string name="trackzero_filter_downloaded">Downloaded</string>
 </resources>

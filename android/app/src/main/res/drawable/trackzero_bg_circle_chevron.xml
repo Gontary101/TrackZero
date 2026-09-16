@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- TrackZero Circular Chevron Button Background — OLED Black with Mint Border -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+  android:shape="oval">
+  <solid android:color="@color/trackzero_oled_black" />
+  <stroke
+    android:width="@dimen/trackzero_stroke_border"
+    android:color="@color/trackzero_mint_border" />
+</shape>

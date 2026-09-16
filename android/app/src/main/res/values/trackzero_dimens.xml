@@ -47,4 +47,16 @@
   <dimen name="trackzero_text_route_card_eyebrow">14sp</dimen>
   <dimen name="trackzero_text_route_card_metric_label">13sp</dimen>
   <dimen name="trackzero_text_route_card_cta">15sp</dimen>
+
+  <!-- Routes Screen Dimensions -->
+  <dimen name="trackzero_routes_filter_height">48dp</dimen>
+  <dimen name="trackzero_route_list_card_height">102dp</dimen>
+  <dimen name="trackzero_route_list_thumb_width">96dp</dimen>
+  <dimen name="trackzero_route_list_chevron_size">42dp</dimen>
+  <dimen name="trackzero_route_list_card_spacing">11dp</dimen>
+  <dimen name="trackzero_text_routes_title">40sp</dimen>
+  <dimen name="trackzero_text_route_list_title">19sp</dimen>
+  <dimen name="trackzero_text_route_list_metric_val">22sp</dimen>
+  <dimen name="trackzero_text_route_list_unit">14sp</dimen>
+  <dimen name="trackzero_text_route_list_label">11sp</dimen>
 </resources>
