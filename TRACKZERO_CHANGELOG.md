@@ -137,5 +137,23 @@ main
    * **Files Modified:**
      * `android/app/src/main/res/layout/trackzero_fragment_routes.xml` — Header uses dot-matrix wordmark vector drawable.
    * **Verification:** `./gradlew :app:compileGoogleDebugKotlin -Parm64` passed with 0 errors. Side-by-side comparison verified against `routes_display.png`.
+5. `Merge task 'feat/ui-routes-screen' into ws/ui` (Merge commit: `d993c55`)
+
+### Task: `cleanup/ui-dead-code`
+* **Parent Branch:** `ws/ui`
+* **Objective:** Audit and eliminate all dead code, unused resource tokens, phantom view IDs, and unreferenced fields introduced across previous UI tasks.
+* **Scope Firewall:** Zero modifications to existing UI appearance, behavior, or layouts; only removing unreferenced and dead code.
+
+#### Commits:
+1. `refactor(ui): remove unused tokens, dead fields, and invalid constraints`
+   * **Files Modified:**
+     * `android/app/src/main/res/values/trackzero_colors.xml` — Removed 7 unused speculative colors (`trackzero_surface_black`, `trackzero_deep_surface`, `trackzero_secondary_text`, `trackzero_mint_dim`, `trackzero_mint_translucent_10`, `trackzero_mint_translucent_20`, `trackzero_scrim_black_60`).
+     * `android/app/src/main/res/values/trackzero_dimens.xml` — Removed 13 unused dimension tokens (`trackzero_space_base`, `trackzero_radius_maneuver_card`, `trackzero_radius_chip`, `trackzero_radius_circle`, `trackzero_touch_target_min`, `trackzero_text_hero_numeric`, `trackzero_text_hero_turn`, `trackzero_text_display_title`, `trackzero_text_card_title`, `trackzero_text_metric_large`, `trackzero_text_label`, `trackzero_text_meta`, `trackzero_text_routes_title`).
+     * `android/app/src/main/res/layout/trackzero_fragment_routes.xml` — Fixed dangling constraint reference pointing to nonexistent ID `tv_routes_header_title` to correctly reference `iv_routes_header_title`.
+     * `android/app/src/main/java/app/organicmaps/trackzero/ui/TrackZeroRouteCard.kt` — Removed unused private fields `tvDistanceUnit` and `tvElevationUnit`.
+     * `android/app/src/main/java/app/organicmaps/trackzero/ui/TrackZeroBottomIsland.kt` — Formatted with official Android ktlint configuration.
+     * `android/app/src/main/java/app/organicmaps/trackzero/ui/TrackZeroRoutesAdapter.kt` — Formatted with official Android ktlint configuration.
+     * `android/app/src/main/java/app/organicmaps/trackzero/data/TrackZeroRouteItem.kt` — Formatted with official Android ktlint configuration.
+   * **Verification:** Zero unused tokens remaining (verified via AST scan: 6 colors, 34 dimens, 14 strings, 17 drawables all active with 0 unused). `ktlintCheck`, `detektCheck`, Kotlin compilation, and unit tests all passed cleanly (`BUILD SUCCESSFUL`).
 
 ---
