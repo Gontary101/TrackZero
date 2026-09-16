@@ -230,5 +230,24 @@ main
    * **Verification:** `./gradlew app:ktlintCheck -Parm64`, Kotlin/Java compilation, and unit tests all passed cleanly (`BUILD SUCCESSFUL`).
 2. `Merge task 'feat/ui-map-route-card-hook' into int/ui-map-overlay` (Merge commit: `f02d91e`)
 
+#### Task: `feat/ui-map-tab-routing`
+* **Parent Branch:** `int/ui-map-overlay`
+* **Objective:** Connect TrackZeroBottomIsland navigation tabs (Map, Routes, Search, More), overlay full-screen TrackZeroRoutesFragment with zero MapView reload/destruction, and wire Search/More delegation to mature Organic Maps menus.
+* **Scope Firewall:** Overlay presentation and tab delegation only; zero map destruction, zero changes to native search/menu implementations.
+
+##### Commits:
+1. `feat(ui): wire bottom island tab routing and overlay Routes screen`
+   * **Hash:** `b0924fa`
+   * **Files Added:**
+     * `android/app/src/main/java/app/organicmaps/trackzero/ui/TrackZeroRoutesFragment.kt` — Full-screen Routes fragment binding curated route cards, category filter pills, system insets padding, and bottom island tab actions.
+   * **Files Modified:**
+     * `android/app/src/main/res/layout/activity_map.xml` — Mounted `trackzero_routes_container` FrameLayout overlay over CoordinatorLayout.
+     * `android/app/src/main/java/app/organicmaps/trackzero/ui/TrackZeroMapOverlayController.kt` — Expanded `MapActionsBridge` with `openSearch()`, `openMore()`, `openRoutes()`, `openMap()`, wired `bottomIsland.listener`, and exposed `selectTab()`.
+     * `android/app/src/main/java/app/organicmaps/maplayer/MapButtonsController.java` — Implemented tab routing bridge delegates for search, menu, and Routes screen presentation.
+     * `android/app/src/main/java/app/organicmaps/MwmActivity.java` — Implemented `showTrackZeroRoutes()`, `hideTrackZeroRoutes()`, `onTrackZeroRouteSelected()`, and wired back-press handling.
+     * `android/app/src/test/java/app/organicmaps/trackzero/ui/TrackZeroMapOverlayControllerTest.kt` — Added unit test verifying tab selection delegation.
+   * **Verification:** `./gradlew app:ktlintCheck -Parm64`, Kotlin/Java compilation, and unit tests all passed cleanly (`BUILD SUCCESSFUL`).
+2. `Merge task 'feat/ui-map-tab-routing' into int/ui-map-overlay` (Merge commit: `1db47fa`)
+
 ---
 
