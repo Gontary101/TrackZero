@@ -23,6 +23,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import app.organicmaps.MwmActivity;
 import app.organicmaps.R;
+import app.organicmaps.trackzero.ui.TrackZeroMapOverlayController;
 import app.organicmaps.routing.RoutingPlanViewModel;
 import app.organicmaps.sdk.Framework;
 import app.organicmaps.sdk.downloader.MapManager;
@@ -61,6 +62,8 @@ public class MapButtonsController extends Fragment
   FloatingActionButton mTrackRecordingStatusButton;
   @Nullable
   private MyPositionButton mNavMyPosition;
+  @Nullable
+  private TrackZeroMapOverlayController mTrackZeroOverlayController;
   private SearchWheel mSearchWheel;
   private BadgeDrawable mBadgeDrawable;
   @Nullable
@@ -176,7 +179,42 @@ public class MapButtonsController extends Fragment
     if (mTrackRecordingStatusButton != null)
       mButtonsMap.put(MapButtons.trackRecordingStatus, mTrackRecordingStatusButton);
     showButton(false, MapButtons.trackRecordingStatus);
+
+    final View trackzeroOverlay = mFrame.findViewById(R.id.trackzero_map_overlay);
+    if (trackzeroOverlay != null)
+    {
+      mTrackZeroOverlayController = new TrackZeroMapOverlayController(
+          trackzeroOverlay,
+          new TrackZeroMapOverlayController.MapActionsBridge()
+          {
+            @Override
+            public void zoomIn()
+            {
+              mMapButtonClickListener.onMapButtonClick(MapButtons.zoomIn);
+            }
+
+            @Override
+            public void zoomOut()
+            {
+              mMapButtonClickListener.onMapButtonClick(MapButtons.zoomOut);
+            }
+
+            @Override
+            public void myPosition()
+            {
+              mMapButtonClickListener.onMapButtonClick(MapButtons.myPosition);
+            }
+          }
+      );
+    }
+
     return mFrame;
+  }
+
+  @Nullable
+  public TrackZeroMapOverlayController getTrackZeroOverlayController()
+  {
+    return mTrackZeroOverlayController;
   }
   // For disabling bottom buttons which are visible in tablets
   private void setBottomButtonsHidden(boolean hide)

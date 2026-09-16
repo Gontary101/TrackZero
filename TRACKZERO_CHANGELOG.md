@@ -158,4 +158,24 @@ main
    * **Verification:** Zero unused tokens remaining (verified via AST scan: 6 colors, 34 dimens, 14 strings, 17 drawables all active with 0 unused). `ktlintCheck`, `detektCheck`, Kotlin compilation, and unit tests all passed cleanly (`BUILD SUCCESSFUL`).
 2. `Merge task 'cleanup/ui-dead-code' into ws/ui` (Merge commit: `127541b`)
 
+### Integration: `int/ui-map-overlay`
+* **Parent Branch:** `ws/ui`
+* **Objective:** Mount TrackZero UI shell over Organic Maps MapView with clean ownership boundaries, thin map action bridges, and deterministic state rendering.
+
+#### Task: `feat/ui-map-overlay-host`
+* **Parent Branch:** `int/ui-map-overlay`
+* **Objective:** Mount TrackZero map overlay host into Organic Maps map button hierarchy and replace visible right-side map controls while preserving native map behavior.
+* **Scope Firewall:** No route-card animations, no fragment navigation, no route start, no map-drag collapse, minimal overlay host hook only.
+
+##### Commits:
+1. `feat(ui): mount TrackZero map overlay host and wire native bridge`
+   * **Files Added:**
+     * `android/app/src/main/res/layout/trackzero_map_overlay.xml` — TrackZero overlay container hosting circular map controls, route card (hidden by default), and bottom island.
+     * `android/app/src/main/java/app/organicmaps/trackzero/ui/MapOverlayState.kt` — Explicit sealed state model (`Browsing`, `RoutePreview`, `MapInteracting`).
+     * `android/app/src/main/java/app/organicmaps/trackzero/ui/TrackZeroMapOverlayController.kt` — Presentation controller binding TrackZero controls to native Organic Maps action bridge.
+   * **Files Modified:**
+     * `android/app/src/main/res/layout/map_buttons_layout_regular.xml` — Mounted TrackZero overlay host and set superseded legacy buttons to `gone`.
+     * `android/app/src/main/java/app/organicmaps/maplayer/MapButtonsController.java` — Thin native action bridge forwarding zoom and location events to `mMapButtonClickListener`.
+   * **Verification:** `./gradlew app:ktlintCheck -Parm64`, Kotlin/Java compilation, and unit tests all passed cleanly (`BUILD SUCCESSFUL`).
+
 ---
