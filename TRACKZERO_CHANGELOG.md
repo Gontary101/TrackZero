@@ -100,6 +100,42 @@ main
      * `android/app/src/main/res/values/trackzero_dimens.xml` — Added `trackzero_text_route_card_eyebrow` (14sp), `trackzero_text_route_card_metric_label` (13sp), and `trackzero_text_route_card_cta` (15sp).
      * `android/app/src/main/res/layout/trackzero_card_featured_route.xml` — Scaled up text sizes for Eyebrow, Distance/Elevation labels, and Start Ride action text.
    * **Verification:** `./gradlew :app:compileGoogleDebugKotlin -Parm64` passed with 0 errors.
+5. `Merge task 'fix/ui-route-card-typography' into ws/ui` (Merge commit: `16455e1`)
+
+### Task: `feat/ui-routes-screen`
+* **Parent Branch:** `ws/ui`
+* **Objective:** Implement TrackZero Routes browse screen, filter capsule pill bar (Local, Favorites, Downloaded), route item list cards with silhouette thumbnails, and TrackZeroRoutesAdapter.
+* **Scope Firewall:** Contained UI browse layout, RecyclerView adapter, and vector drawables.
+
+#### Commits:
+1. `feat(ui): add drawables and tokens for routes browse screen`
+   * **Hash:** `63dd7ba`
+   * **Files Added:**
+     * `android/app/src/main/res/drawable/trackzero_bg_routes_filter_bar.xml` — Stadium capsule pill container with 1.5dp mint border.
+     * `android/app/src/main/res/drawable/trackzero_bg_routes_filter_pill_selected.xml` — Solid mint pill for active filter tab.
+     * `android/app/src/main/res/drawable/trackzero_bg_route_list_card.xml` — 24dp rounded rectangle card with 1.5dp mint border.
+     * `android/app/src/main/res/drawable/trackzero_bg_circle_chevron.xml` — 42dp circular button background.
+     * `android/app/src/main/res/drawable/trackzero_ic_chevron_right.xml` — Crisp right chevron vector icon.
+   * **Files Modified:**
+     * `android/app/src/main/res/values/trackzero_dimens.xml` — Route list card height (102dp), thumbnail width (96dp), chevron size (42dp), typography scale.
+     * `android/app/src/main/res/values/trackzero_strings.xml` — Filter tab strings (Local, Favorites, Downloaded) and ROUTES header title.
+2. `feat(ui): add route list card layout and route item data model`
+   * **Hash:** `cc062c0`
+   * **Files Added:**
+     * `android/app/src/main/res/drawable/trackzero_ic_route_silhouette_1.xml` — Sample route silhouette vector.
+     * `android/app/src/main/res/layout/trackzero_item_route_card.xml` — 102dp route list card layout with thumbnail, divider, route title, Distance & Elevation stats with units/labels, and circular chevron affordance.
+     * `android/app/src/main/java/app/organicmaps/trackzero/data/TrackZeroRouteItem.kt` — Data class representing cycling route item with distance, elevation, and flags.
+3. `feat(ui): add routes browse screen layout and TrackZeroRoutesAdapter`
+   * **Hash:** `620604b`
+   * **Files Added:**
+     * `android/app/src/main/res/layout/trackzero_fragment_routes.xml` — Complete Routes screen layout with header, filter bar, RecyclerView, and bottom island.
+     * `android/app/src/main/java/app/organicmaps/trackzero/ui/TrackZeroRoutesAdapter.kt` — RecyclerView ListAdapter binding route items with DiffCallback.
+4. `feat(ui): add dot-matrix ROUTES wordmark vector drawable`
+   * **Hash:** `f5407db`
+   * **Files Added:**
+     * `android/app/src/main/res/drawable/trackzero_wordmark_routes.xml` — 122-dot vector wordmark matching the canonical dot-matrix identity.
+   * **Files Modified:**
+     * `android/app/src/main/res/layout/trackzero_fragment_routes.xml` — Header uses dot-matrix wordmark vector drawable.
+   * **Verification:** `./gradlew :app:compileGoogleDebugKotlin -Parm64` passed with 0 errors. Side-by-side comparison verified against `routes_display.png`.
 
 ---
-
