@@ -169,6 +169,7 @@ main
 
 ##### Commits:
 1. `feat(ui): mount TrackZero map overlay host and wire native bridge`
+   * **Hash:** `c85636d`
    * **Files Added:**
      * `android/app/src/main/res/layout/trackzero_map_overlay.xml` — TrackZero overlay container hosting circular map controls, route card (hidden by default), and bottom island.
      * `android/app/src/main/java/app/organicmaps/trackzero/ui/MapOverlayState.kt` — Explicit sealed state model (`Browsing`, `RoutePreview`, `MapInteracting`).
@@ -177,5 +178,6 @@ main
      * `android/app/src/main/res/layout/map_buttons_layout_regular.xml` — Mounted TrackZero overlay host and set superseded legacy buttons to `gone`.
      * `android/app/src/main/java/app/organicmaps/maplayer/MapButtonsController.java` — Thin native action bridge forwarding zoom and location events to `mMapButtonClickListener`.
    * **Verification:** `./gradlew app:ktlintCheck -Parm64`, Kotlin/Java compilation, and unit tests all passed cleanly (`BUILD SUCCESSFUL`).
+2. `Merge task 'feat/ui-map-overlay-host' into int/ui-map-overlay` (Merge commit: `06bb971`)
 
 ---
