@@ -249,5 +249,11 @@ main
    * **Verification:** `./gradlew app:ktlintCheck -Parm64`, Kotlin/Java compilation, and unit tests all passed cleanly (`BUILD SUCCESSFUL`).
 2. `Merge task 'feat/ui-map-tab-routing' into int/ui-map-overlay` (Merge commit: `1db47fa`)
 
+### Integration Completion: `int/ui-map-overlay` → `ws/ui`
+* **Parent Branch:** `ws/ui`
+* **Objective:** Consolidate Step 1 (Main Map Overlay Shell) into `ws/ui`, uniting the overlay host, circular map controls, bottom island safe-area insets, route card state hooks with gesture minimization, and tab routing (Map, Routes, Search, More).
+* **Merge Commit:** `925ea99`
+* **Verification:** Full compilation, `ktlintCheck`, and unit tests all passed cleanly (`BUILD SUCCESSFUL`).
+
 ---
 
