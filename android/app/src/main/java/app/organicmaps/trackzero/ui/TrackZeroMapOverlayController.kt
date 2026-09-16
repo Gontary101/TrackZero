@@ -23,6 +23,10 @@ class TrackZeroMapOverlayController(private val root: View, private val mapActio
         fun zoomIn()
         fun zoomOut()
         fun myPosition()
+        fun openSearch()
+        fun openMore()
+        fun openRoutes()
+        fun openMap()
     }
 
     /**
@@ -66,6 +70,16 @@ class TrackZeroMapOverlayController(private val root: View, private val mapActio
             mapActions.myPosition()
         }
 
+        // Wire bottom island navigation tabs to native Organic Maps bridge
+        bottomIsland?.listener = TrackZeroBottomIsland.OnTabSelectedListener { tab ->
+            when (tab) {
+                TrackZeroBottomIsland.Tab.MAP -> mapActions.openMap()
+                TrackZeroBottomIsland.Tab.ROUTES -> mapActions.openRoutes()
+                TrackZeroBottomIsland.Tab.SEARCH -> mapActions.openSearch()
+                TrackZeroBottomIsland.Tab.MORE -> mapActions.openMore()
+            }
+        }
+
         // Wire route card Start Ride button
         routeCard?.onStartRideClickListener = TrackZeroRouteCard.OnStartRideClickListener {
             val currentRoute = when (val currentState = state) {
@@ -97,6 +111,13 @@ class TrackZeroMapOverlayController(private val root: View, private val mapActio
     fun detachMapView() {
         attachedMapView?.removeOnTouchEventListener(mapTouchEventListener)
         attachedMapView = null
+    }
+
+    /**
+     * Selects the specified tab on the bottom island.
+     */
+    fun selectTab(tab: TrackZeroBottomIsland.Tab, notify: Boolean = false) {
+        bottomIsland?.selectTab(tab, notify)
     }
 
     /**

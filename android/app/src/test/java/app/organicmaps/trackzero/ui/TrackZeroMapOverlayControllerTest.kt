@@ -95,4 +95,10 @@ class TrackZeroMapOverlayControllerTest {
         controller.attachMapView(mockMapView)
         controller.detachMapView()
     }
+
+    @Test
+    fun selectTabDelegatesToBottomIsland() {
+        controller.selectTab(TrackZeroBottomIsland.Tab.MAP, notify = false)
+        controller.selectTab(TrackZeroBottomIsland.Tab.ROUTES, notify = false)
+    }
 }
