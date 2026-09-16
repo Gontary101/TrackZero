@@ -146,6 +146,7 @@ main
 
 #### Commits:
 1. `refactor(ui): remove unused tokens, dead fields, and invalid constraints`
+   * **Hash:** `a9ba3b2`
    * **Files Modified:**
      * `android/app/src/main/res/values/trackzero_colors.xml` — Removed 7 unused speculative colors (`trackzero_surface_black`, `trackzero_deep_surface`, `trackzero_secondary_text`, `trackzero_mint_dim`, `trackzero_mint_translucent_10`, `trackzero_mint_translucent_20`, `trackzero_scrim_black_60`).
      * `android/app/src/main/res/values/trackzero_dimens.xml` — Removed 13 unused dimension tokens (`trackzero_space_base`, `trackzero_radius_maneuver_card`, `trackzero_radius_chip`, `trackzero_radius_circle`, `trackzero_touch_target_min`, `trackzero_text_hero_numeric`, `trackzero_text_hero_turn`, `trackzero_text_display_title`, `trackzero_text_card_title`, `trackzero_text_metric_large`, `trackzero_text_label`, `trackzero_text_meta`, `trackzero_text_routes_title`).
@@ -155,5 +156,6 @@ main
      * `android/app/src/main/java/app/organicmaps/trackzero/ui/TrackZeroRoutesAdapter.kt` — Formatted with official Android ktlint configuration.
      * `android/app/src/main/java/app/organicmaps/trackzero/data/TrackZeroRouteItem.kt` — Formatted with official Android ktlint configuration.
    * **Verification:** Zero unused tokens remaining (verified via AST scan: 6 colors, 34 dimens, 14 strings, 17 drawables all active with 0 unused). `ktlintCheck`, `detektCheck`, Kotlin compilation, and unit tests all passed cleanly (`BUILD SUCCESSFUL`).
+2. `Merge task 'cleanup/ui-dead-code' into ws/ui` (Merge commit: `127541b`)
 
 ---
