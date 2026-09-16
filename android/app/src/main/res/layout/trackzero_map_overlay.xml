@@ -16,10 +16,13 @@
     layout="@layout/trackzero_map_controls"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/trackzero_space_xl"
     android:layout_marginEnd="@dimen/trackzero_space_md"
     android:layout_marginBottom="@dimen/trackzero_space_md"
+    app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintBottom_toTopOf="@+id/trackzero_route_card"
-    app:layout_constraintEnd_toEndOf="parent" />
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintVertical_bias="1.0" />
 
   <!-- Featured Route Card (Hidden by default in Browsing state) -->
   <app.organicmaps.trackzero.ui.TrackZeroRouteCard

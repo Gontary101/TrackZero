@@ -20,7 +20,8 @@ class TrackZeroMapOverlayController(private val root: View, private val mapActio
         fun myPosition()
     }
 
-    val mapControls: View? = root.findViewById(R.id.trackzero_map_controls)
+    val controlsView: View? = root.findViewById(R.id.trackzero_map_controls)
+    val mapControls: TrackZeroMapControls? = controlsView?.let { TrackZeroMapControls(it) }
     val routeCard: TrackZeroRouteCard? = root.findViewById(R.id.trackzero_route_card)
     val bottomIsland: TrackZeroBottomIsland? = root.findViewById(R.id.trackzero_bottom_island)
 
@@ -29,17 +30,24 @@ class TrackZeroMapOverlayController(private val root: View, private val mapActio
 
     init {
         // Wire circular map controls to native Organic Maps bridge
-        root.findViewById<View>(R.id.btn_trackzero_zoom_in)?.setOnClickListener {
+        mapControls?.btnZoomIn?.setOnClickListener {
             mapActions.zoomIn()
         }
-        root.findViewById<View>(R.id.btn_trackzero_zoom_out)?.setOnClickListener {
+        mapControls?.btnZoomOut?.setOnClickListener {
             mapActions.zoomOut()
         }
-        root.findViewById<View>(R.id.btn_trackzero_my_location)?.setOnClickListener {
+        mapControls?.btnMyLocation?.setOnClickListener {
             mapActions.myPosition()
         }
 
         renderState(state)
+    }
+
+    /**
+     * Updates the location button mode according to Organic Maps LocationState.
+     */
+    fun updateMyPositionMode(mode: Int) {
+        mapControls?.updateLocationMode(mode)
     }
 
     /**
