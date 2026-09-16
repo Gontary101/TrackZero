@@ -187,6 +187,7 @@ main
 
 ##### Commits:
 1. `feat(ui): encapsulate map controls and wire dynamic location state updates`
+   * **Hash:** `7a84eef`
    * **Files Added:**
      * `android/app/src/main/java/app/organicmaps/trackzero/ui/TrackZeroMapControls.kt` — Controller managing circular map controls and GPS mode icon/tint updates.
    * **Files Modified:**
@@ -195,5 +196,6 @@ main
      * `android/app/src/main/java/app/organicmaps/trackzero/ui/TrackZeroMapOverlayController.kt` — Integrated `TrackZeroMapControls` and exposed `updateMyPositionMode()`.
      * `android/app/src/main/java/app/organicmaps/maplayer/MapButtonsController.java` — Forwarded `updateNavMyPositionButton` to `mTrackZeroOverlayController`.
    * **Verification:** `./gradlew app:ktlintCheck -Parm64`, Kotlin/Java compilation, and unit tests all passed cleanly (`BUILD SUCCESSFUL`).
+2. `Merge task 'feat/ui-map-controls' into int/ui-map-overlay` (Merge commit: `e159b85`)
 
 ---
