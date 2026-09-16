@@ -3,7 +3,6 @@
 <resources>
   <!-- Spacing Tokens -->
   <dimen name="trackzero_space_xs">4dp</dimen>
-  <dimen name="trackzero_space_base">8dp</dimen>
   <dimen name="trackzero_space_sm">12dp</dimen>
   <dimen name="trackzero_space_md">16dp</dimen>
   <dimen name="trackzero_space_card_padding">20dp</dimen>
@@ -13,10 +12,7 @@
   <!-- Corner Radii Tokens -->
   <dimen name="trackzero_radius_bottom_island">999dp</dimen>
   <dimen name="trackzero_radius_stats_island">28dp</dimen>
-  <dimen name="trackzero_radius_maneuver_card">24dp</dimen>
   <dimen name="trackzero_radius_card">24dp</dimen>
-  <dimen name="trackzero_radius_chip">20dp</dimen>
-  <dimen name="trackzero_radius_circle">999dp</dimen>
 
   <!-- Stroke and Border Tokens -->
   <dimen name="trackzero_stroke_border">1.5dp</dimen>
@@ -27,23 +23,15 @@
   <dimen name="trackzero_bottom_island_bottom_offset">24dp</dimen>
   <dimen name="trackzero_tab_icon_size">26dp</dimen>
   <dimen name="trackzero_circle_button_size">60dp</dimen>
-  <dimen name="trackzero_touch_target_min">48dp</dimen>
   <dimen name="trackzero_route_card_play_size">80dp</dimen>
   <dimen name="trackzero_route_card_icon_play_size">28dp</dimen>
   <dimen name="trackzero_route_card_divider_margin">16dp</dimen>
 
-  <!-- Typography Hierarchy Tokens -->
-  <dimen name="trackzero_text_hero_numeric">104sp</dimen>
-  <dimen name="trackzero_text_hero_turn">64sp</dimen>
-  <dimen name="trackzero_text_display_title">28sp</dimen>
+  <!-- Featured Route Card Typography Tokens -->
   <dimen name="trackzero_text_page_title">24sp</dimen>
-  <dimen name="trackzero_text_card_title">22sp</dimen>
   <dimen name="trackzero_text_tab_label">13sp</dimen>
-  <dimen name="trackzero_text_metric_large">36sp</dimen>
   <dimen name="trackzero_text_metric_value">24sp</dimen>
   <dimen name="trackzero_text_unit">14sp</dimen>
-  <dimen name="trackzero_text_label">12sp</dimen>
-  <dimen name="trackzero_text_meta">13sp</dimen>
   <dimen name="trackzero_text_route_card_eyebrow">14sp</dimen>
   <dimen name="trackzero_text_route_card_metric_label">13sp</dimen>
   <dimen name="trackzero_text_route_card_cta">15sp</dimen>
@@ -54,7 +42,6 @@
   <dimen name="trackzero_route_list_thumb_width">96dp</dimen>
   <dimen name="trackzero_route_list_chevron_size">42dp</dimen>
   <dimen name="trackzero_route_list_card_spacing">11dp</dimen>
-  <dimen name="trackzero_text_routes_title">40sp</dimen>
   <dimen name="trackzero_text_route_list_title">19sp</dimen>
   <dimen name="trackzero_text_route_list_metric_val">22sp</dimen>
   <dimen name="trackzero_text_route_list_unit">14sp</dimen>
