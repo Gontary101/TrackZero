@@ -9,12 +9,13 @@
   <!-- Typography and Content Colors -->
   <color name="trackzero_primary_white">#FFFFFF</color>
   <color name="trackzero_secondary_text">#D6DED9</color>
-  <color name="trackzero_muted_text">#A8B0AB</color>
+  <color name="trackzero_muted_text">#949C97</color>
 
   <!-- Mint Brand Accent Colors -->
   <color name="trackzero_mint_accent">#A9F7B9</color>
   <color name="trackzero_mint_border">#7EE8A0</color>
   <color name="trackzero_mint_dim">#5FC886</color>
+  <color name="trackzero_tab_divider">#337EE8A0</color>
 
   <!-- Translucent and Overlay States -->
   <color name="trackzero_mint_translucent_10">#1AA9F7B9</color>
