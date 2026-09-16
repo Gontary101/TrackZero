@@ -94,6 +94,11 @@ main
    * **Hash:** `edde74b`
    * **Files Added:**
      * `android/app/src/main/java/app/organicmaps/trackzero/ui/TrackZeroRouteCard.kt` — Custom FrameLayout view component for binding route metadata and handling Start Ride click events.
+4. `fix(ui): increase typography scale for route card labels and start ride cta`
+   * **Hash:** `9b06aa0`
+   * **Files Modified:**
+     * `android/app/src/main/res/values/trackzero_dimens.xml` — Added `trackzero_text_route_card_eyebrow` (14sp), `trackzero_text_route_card_metric_label` (13sp), and `trackzero_text_route_card_cta` (15sp).
+     * `android/app/src/main/res/layout/trackzero_card_featured_route.xml` — Scaled up text sizes for Eyebrow, Distance/Elevation labels, and Start Ride action text.
    * **Verification:** `./gradlew :app:compileGoogleDebugKotlin -Parm64` passed with 0 errors.
 
 ---
