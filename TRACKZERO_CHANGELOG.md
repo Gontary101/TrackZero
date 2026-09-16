@@ -213,5 +213,22 @@ main
    * **Verification:** `./gradlew app:ktlintCheck -Parm64`, Kotlin/Java compilation, and unit tests all passed cleanly (`BUILD SUCCESSFUL`).
 2. `Merge task 'feat/ui-map-insets' into int/ui-map-overlay` (Merge commit: `68656de`)
 
+#### Task: `feat/ui-map-route-card-hook`
+* **Parent Branch:** `int/ui-map-overlay`
+* **Objective:** Implement featured route card presentation, state transitions (`RoutePreview`, `Browsing`, `MapInteracting`), start ride callback bridge, and non-intrusive gesture motion detection via MapView.
+* **Scope Firewall:** Route card presentation and gesture hooks only, zero modifications to native map touch handling or search routing.
+
+##### Commits:
+1. `feat(ui): hook route card state transitions and map interaction gestures`
+   * **Hash:** `b84e422`
+   * **Files Added:**
+     * `android/app/src/test/java/app/organicmaps/trackzero/ui/TrackZeroMapOverlayControllerTest.kt` — Unit tests covering initial browsing state, route card presentation, start ride hook, map interaction minimization, restoring preview on interaction end, and detaching safely.
+   * **Files Modified:**
+     * `android/sdk/src/main/java/app/organicmaps/sdk/MapView.java` — Added `OnTouchEventListener` callback interface and listener registry to observe map gestures without consuming touches.
+     * `android/app/src/main/java/app/organicmaps/trackzero/ui/TrackZeroMapOverlayController.kt` — Implemented `showRouteCard()`, `hideRouteCard()`, `onMapInteractionStarted()`, `onMapInteractionEnded()`, `attachMapView()`, `detachMapView()`, and `OnRouteActionListener`.
+     * `android/app/src/main/java/app/organicmaps/maplayer/MapButtonsController.java` — Wired `attachMapView` in `onViewCreated` and `detachMapView` in `onDestroyView`.
+   * **Verification:** `./gradlew app:ktlintCheck -Parm64`, Kotlin/Java compilation, and unit tests all passed cleanly (`BUILD SUCCESSFUL`).
+2. `Merge task 'feat/ui-map-route-card-hook' into int/ui-map-overlay` (Merge commit: `f02d91e`)
+
 ---
 
