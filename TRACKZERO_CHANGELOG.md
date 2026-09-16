@@ -180,4 +180,20 @@ main
    * **Verification:** `./gradlew app:ktlintCheck -Parm64`, Kotlin/Java compilation, and unit tests all passed cleanly (`BUILD SUCCESSFUL`).
 2. `Merge task 'feat/ui-map-overlay-host' into int/ui-map-overlay` (Merge commit: `06bb971`)
 
+#### Task: `feat/ui-map-controls`
+* **Parent Branch:** `int/ui-map-overlay`
+* **Objective:** Encapsulate TrackZero map controls into TrackZeroMapControls, wire GPS location state updates (follow, rotate, pending, not follow) to the circular location button, and apply safe vertical constraints to avoid collision on all screen aspect ratios.
+* **Scope Firewall:** Contained controls component and presentation updates, zero modifications to native Organic Maps GPS logic.
+
+##### Commits:
+1. `feat(ui): encapsulate map controls and wire dynamic location state updates`
+   * **Files Added:**
+     * `android/app/src/main/java/app/organicmaps/trackzero/ui/TrackZeroMapControls.kt` — Controller managing circular map controls and GPS mode icon/tint updates.
+   * **Files Modified:**
+     * `android/app/src/main/res/layout/trackzero_map_controls.xml` — Added `iv_trackzero_my_location` ID for dynamic icon updates.
+     * `android/app/src/main/res/layout/trackzero_map_overlay.xml` — Added safe top constraint and vertical bias to map controls include.
+     * `android/app/src/main/java/app/organicmaps/trackzero/ui/TrackZeroMapOverlayController.kt` — Integrated `TrackZeroMapControls` and exposed `updateMyPositionMode()`.
+     * `android/app/src/main/java/app/organicmaps/maplayer/MapButtonsController.java` — Forwarded `updateNavMyPositionButton` to `mTrackZeroOverlayController`.
+   * **Verification:** `./gradlew app:ktlintCheck -Parm64`, Kotlin/Java compilation, and unit tests all passed cleanly (`BUILD SUCCESSFUL`).
+
 ---

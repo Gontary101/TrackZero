@@ -479,6 +479,8 @@ public class MapButtonsController extends Fragment
   {
     if (mNavMyPosition != null)
       mNavMyPosition.update(newMode);
+    if (mTrackZeroOverlayController != null)
+      mTrackZeroOverlayController.updateMyPositionMode(newMode);
   }
 
   private int getViewTopOffset(float translation, View v)
