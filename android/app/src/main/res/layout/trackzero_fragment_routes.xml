@@ -9,19 +9,16 @@
   android:layout_height="match_parent"
   android:background="@color/trackzero_oled_black">
 
-  <!-- Header: ROUTES Dot-Matrix Title -->
-  <TextView
-    android:id="@+id/tv_routes_header_title"
+  <!-- Header: ROUTES Dot-Matrix Wordmark -->
+  <ImageView
+    android:id="@+id/iv_routes_header_title"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_height="56dp"
     android:layout_marginStart="@dimen/trackzero_space_card_padding"
     android:layout_marginTop="@dimen/trackzero_space_xl"
-    android:fontFamily="monospace"
-    android:letterSpacing="0.15"
-    android:text="@string/trackzero_routes_title"
-    android:textColor="@color/trackzero_mint_accent"
-    android:textSize="@dimen/trackzero_text_routes_title"
-    android:textStyle="bold"
+    android:adjustViewBounds="true"
+    android:contentDescription="@string/trackzero_routes_title"
+    android:src="@drawable/trackzero_wordmark_routes"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
 
