@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- TrackZero Featured Route / Ride Launch Card Layout -->
+<androidx.constraintlayout.widget.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/trackzero_route_card_root"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="@drawable/trackzero_bg_route_card"
+  android:paddingStart="@dimen/trackzero_space_lg"
+  android:paddingTop="@dimen/trackzero_space_card_padding"
+  android:paddingEnd="@dimen/trackzero_space_card_padding"
+  android:paddingBottom="@dimen/trackzero_space_card_padding">
+
+  <!-- Eyebrow: FEATURED ROUTE -->
+  <TextView
+    android:id="@+id/tv_route_eyebrow"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:letterSpacing="0.1"
+    android:text="@string/trackzero_featured_route"
+    android:textAllCaps="true"
+    android:textColor="@color/trackzero_mint_accent"
+    android:textSize="@dimen/trackzero_text_label"
+    android:textStyle="bold"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <!-- Route Title: e.g. Puy de Dôme Loop -->
+  <TextView
+    android:id="@+id/tv_route_title"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/trackzero_space_xs"
+    android:layout_marginEnd="@dimen/trackzero_space_md"
+    android:ellipsize="end"
+    android:maxLines="1"
+    android:textColor="@color/trackzero_primary_white"
+    android:textSize="@dimen/trackzero_text_page_title"
+    android:textStyle="bold"
+    app:layout_constraintEnd_toStartOf="@+id/v_main_divider"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/tv_route_eyebrow"
+    tools:text="Puy de Dôme Loop" />
+
+  <!-- Distance Metric Block -->
+  <TextView
+    android:id="@+id/tv_distance_label"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/trackzero_space_md"
+    android:letterSpacing="0.08"
+    android:text="@string/trackzero_distance"
+    android:textAllCaps="true"
+    android:textColor="@color/trackzero_muted_text"
+    android:textSize="@dimen/trackzero_text_label"
+    android:textStyle="bold"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/tv_route_title" />
+
+  <TextView
+    android:id="@+id/tv_distance_value"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="@color/trackzero_primary_white"
+    android:textSize="@dimen/trackzero_text_metric_value"
+    android:textStyle="bold"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/tv_distance_label"
+    tools:text="78.4" />
+
+  <TextView
+    android:id="@+id/tv_distance_unit"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/trackzero_space_xs"
+    android:text="@string/trackzero_unit_km"
+    android:textColor="@color/trackzero_muted_text"
+    android:textSize="@dimen/trackzero_text_unit"
+    android:textStyle="bold"
+    app:layout_constraintBaseline_toBaselineOf="@+id/tv_distance_value"
+    app:layout_constraintStart_toEndOf="@+id/tv_distance_value" />
+
+  <!-- Metric Divider -->
+  <View
+    android:id="@+id/v_metric_divider"
+    android:layout_width="1dp"
+    android:layout_height="0dp"
+    android:layout_marginStart="@dimen/trackzero_space_md"
+    android:background="@color/trackzero_tab_divider"
+    app:layout_constraintBottom_toBottomOf="@+id/tv_distance_value"
+    app:layout_constraintStart_toEndOf="@+id/tv_distance_unit"
+    app:layout_constraintTop_toTopOf="@+id/tv_distance_label" />
+
+  <!-- Elevation Metric Block -->
+  <TextView
+    android:id="@+id/tv_elevation_label"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/trackzero_space_md"
+    android:letterSpacing="0.08"
+    android:text="@string/trackzero_elevation"
+    android:textAllCaps="true"
+    android:textColor="@color/trackzero_muted_text"
+    android:textSize="@dimen/trackzero_text_label"
+    android:textStyle="bold"
+    app:layout_constraintStart_toEndOf="@+id/v_metric_divider"
+    app:layout_constraintTop_toTopOf="@+id/tv_distance_label" />
+
+  <TextView
+    android:id="@+id/tv_elevation_value"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="@color/trackzero_primary_white"
+    android:textSize="@dimen/trackzero_text_metric_value"
+    android:textStyle="bold"
+    app:layout_constraintStart_toStartOf="@+id/tv_elevation_label"
+    app:layout_constraintTop_toBottomOf="@+id/tv_elevation_label"
+    tools:text="1,420" />
+
+  <TextView
+    android:id="@+id/tv_elevation_unit"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/trackzero_space_xs"
+    android:text="@string/trackzero_unit_m"
+    android:textColor="@color/trackzero_muted_text"
+    android:textSize="@dimen/trackzero_text_unit"
+    android:textStyle="bold"
+    app:layout_constraintBaseline_toBaselineOf="@+id/tv_elevation_value"
+    app:layout_constraintStart_toEndOf="@+id/tv_elevation_value" />
+
+  <!-- Main Section Vertical Divider -->
+  <View
+    android:id="@+id/v_main_divider"
+    android:layout_width="1dp"
+    android:layout_height="0dp"
+    android:layout_marginEnd="@dimen/trackzero_route_card_divider_margin"
+    android:background="@color/trackzero_tab_divider"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toStartOf="@+id/layout_action_container"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <!-- Right Section: Start Ride Action -->
+  <LinearLayout
+    android:id="@+id/layout_action_container"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <FrameLayout
+      android:id="@+id/btn_start_ride"
+      android:layout_width="@dimen/trackzero_route_card_play_size"
+      android:layout_height="@dimen/trackzero_route_card_play_size"
+      android:background="@drawable/trackzero_btn_start_ride_circle"
+      android:clickable="true"
+      android:contentDescription="@string/trackzero_start_ride"
+      android:focusable="true">
+
+      <ImageView
+        android:layout_width="@dimen/trackzero_route_card_icon_play_size"
+        android:layout_height="@dimen/trackzero_route_card_icon_play_size"
+        android:layout_gravity="center"
+        android:importantForAccessibility="no"
+        android:src="@drawable/trackzero_ic_play_arrow" />
+    </FrameLayout>
+
+    <TextView
+      android:id="@+id/tv_start_ride_label"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/trackzero_space_xs"
+      android:letterSpacing="0.15"
+      android:text="@string/trackzero_start_ride"
+      android:textAllCaps="true"
+      android:textColor="@color/trackzero_mint_accent"
+      android:textSize="@dimen/trackzero_text_label"
+      android:textStyle="bold" />
+  </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
