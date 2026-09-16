@@ -5,4 +5,10 @@
   <string name="trackzero_tab_routes">Routes</string>
   <string name="trackzero_tab_search">Search</string>
   <string name="trackzero_tab_more">More</string>
+  <string name="trackzero_featured_route">Featured Route</string>
+  <string name="trackzero_start_ride">Start Ride</string>
+  <string name="trackzero_distance">Distance</string>
+  <string name="trackzero_elevation">Elevation</string>
+  <string name="trackzero_unit_km">km</string>
+  <string name="trackzero_unit_m">m</string>
 </resources>
