@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- TrackZero Floating Circular Map Controls (Zoom In, Zoom Out, My Location) -->
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/trackzero_map_controls_root"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:gravity="center_horizontal"
+  android:orientation="vertical">
+
+  <!-- Zoom In -->
+  <FrameLayout
+    android:id="@+id/btn_trackzero_zoom_in"
+    android:layout_width="@dimen/trackzero_circle_button_size"
+    android:layout_height="@dimen/trackzero_circle_button_size"
+    android:layout_marginBottom="@dimen/trackzero_space_md"
+    android:background="@drawable/trackzero_bg_circle_button"
+    android:clickable="true"
+    android:contentDescription="@string/zoom_in"
+    android:focusable="true">
+
+    <ImageView
+      android:layout_width="28dp"
+      android:layout_height="28dp"
+      android:layout_gravity="center"
+      android:importantForAccessibility="no"
+      android:src="@drawable/ic_plus"
+      app:tint="@color/trackzero_primary_white" />
+  </FrameLayout>
+
+  <!-- Zoom Out -->
+  <FrameLayout
+    android:id="@+id/btn_trackzero_zoom_out"
+    android:layout_width="@dimen/trackzero_circle_button_size"
+    android:layout_height="@dimen/trackzero_circle_button_size"
+    android:layout_marginBottom="@dimen/trackzero_space_md"
+    android:background="@drawable/trackzero_bg_circle_button"
+    android:clickable="true"
+    android:contentDescription="@string/zoom_out"
+    android:focusable="true">
+
+    <ImageView
+      android:layout_width="28dp"
+      android:layout_height="28dp"
+      android:layout_gravity="center"
+      android:importantForAccessibility="no"
+      android:src="@drawable/ic_minus"
+      app:tint="@color/trackzero_primary_white" />
+  </FrameLayout>
+
+  <!-- My Location / Recenter -->
+  <FrameLayout
+    android:id="@+id/btn_trackzero_my_location"
+    android:layout_width="@dimen/trackzero_circle_button_size"
+    android:layout_height="@dimen/trackzero_circle_button_size"
+    android:background="@drawable/trackzero_bg_circle_button"
+    android:clickable="true"
+    android:contentDescription="@string/core_my_position"
+    android:focusable="true">
+
+    <ImageView
+      android:layout_width="28dp"
+      android:layout_height="28dp"
+      android:layout_gravity="center"
+      android:importantForAccessibility="no"
+      android:src="@drawable/ic_location_crosshair"
+      app:tint="@color/trackzero_primary_white" />
+  </FrameLayout>
+
+</LinearLayout>

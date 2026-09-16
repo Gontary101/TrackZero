@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- TrackZero Start Ride Action Button Circle — Solid Mint Accent -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+  android:shape="oval">
+  <solid android:color="@color/trackzero_mint_accent" />
+</shape>

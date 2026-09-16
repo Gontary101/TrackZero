@@ -67,5 +67,34 @@ main
      * `android/app/src/main/res/values/trackzero_colors.xml` — Clean slate-gray muted text (#949C97) and tab dividers.
      * `android/app/src/main/res/values/trackzero_dimens.xml` — Sizing tokens updated to match design mockups.
    * **Verification:** Side-by-side pixel comparison generated against `selected_route_display.png` with 100% visual fidelity.
+5. `Merge task 'feat/ui-bottom-island' into ws/ui` (Merge commit)
+
+### Task: `feat/ui-route-card`
+* **Parent Branch:** `ws/ui`
+* **Objective:** Implement TrackZero Featured Route / Ride Launch Card and circular map controls overlay matching the canonical design specification and exact visual identity.
+* **Scope Firewall:** Contained UI component layouts and drawables, zero impact on core map engine routing calculation.
+
+#### Commits:
+1. `feat(ui): add featured route card and circular map control drawables`
+   * **Hash:** `5bdfaff`
+   * **Files Added:**
+     * `android/app/src/main/res/drawable/trackzero_bg_route_card.xml` — Rounded rectangle container with 28dp radius, OLED black surface, 1.5dp mint border.
+     * `android/app/src/main/res/drawable/trackzero_btn_start_ride_circle.xml` — Solid mint accent (`#A9F7B9`) circular button background.
+     * `android/app/src/main/res/drawable/trackzero_ic_play_arrow.xml` — Solid black play triangle vector icon with rounded corners.
+     * `android/app/src/main/res/drawable/trackzero_bg_circle_button.xml` — Circular map control button background (OLED black with 1.5dp mint stroke).
+   * **Files Modified:**
+     * `android/app/src/main/res/values/trackzero_dimens.xml` — Route card play size (80dp), play icon size (28dp), divider margins.
+     * `android/app/src/main/res/values/trackzero_strings.xml` — Strings for Featured Route, Start Ride, Distance, Elevation, units km and m.
+2. `feat(ui): add featured route card and circular map controls layouts`
+   * **Hash:** `f20c21e`
+   * **Files Added:**
+     * `android/app/src/main/res/layout/trackzero_card_featured_route.xml` — Prominent route preview card with Eyebrow, Route Title, Distance/Elevation stat columns with dividers, and circular Start Ride CTA.
+     * `android/app/src/main/res/layout/trackzero_map_controls.xml` — Floating circular map controls (Zoom In, Zoom Out, My Location) matching 60dp circular black/mint design.
+3. `feat(ui): implement TrackZeroRouteCard view component`
+   * **Hash:** `edde74b`
+   * **Files Added:**
+     * `android/app/src/main/java/app/organicmaps/trackzero/ui/TrackZeroRouteCard.kt` — Custom FrameLayout view component for binding route metadata and handling Start Ride click events.
+   * **Verification:** `./gradlew :app:compileGoogleDebugKotlin -Parm64` passed with 0 errors.
 
 ---
+

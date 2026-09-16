@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- TrackZero Play Arrow Vector Icon — Solid Black Play Triangle -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+  android:width="28dp"
+  android:height="28dp"
+  android:viewportWidth="168"
+  android:viewportHeight="166">
+  <path
+    android:pathData="M 69,53 C 69,50 72,48 75,50 L 120,79 C 123,81 123,85 120,87 L 75,116 C 72,118 69,116 69,113 Z"
+    android:fillColor="#000000"
+    android:strokeColor="#000000"
+    android:strokeWidth="4"
+    android:strokeLineCap="round"
+    android:strokeLineJoin="round" />
+</vector>
