@@ -249,11 +249,28 @@ main
    * **Verification:** `./gradlew app:ktlintCheck -Parm64`, Kotlin/Java compilation, and unit tests all passed cleanly (`BUILD SUCCESSFUL`).
 2. `Merge task 'feat/ui-map-tab-routing' into int/ui-map-overlay` (Merge commit: `1db47fa`)
 
-### Integration Completion: `int/ui-map-overlay` → `ws/ui`
+### Task: `feat/style-oled-black-map`
 * **Parent Branch:** `ws/ui`
-* **Objective:** Consolidate Step 1 (Main Map Overlay Shell) into `ws/ui`, uniting the overlay host, circular map controls, bottom island safe-area insets, route card state hooks with gesture minimization, and tab routing (Map, Routes, Search, More).
-* **Merge Commit:** `925ea99`
-* **Verification:** Full compilation, `ktlintCheck`, and unit tests all passed cleanly (`BUILD SUCCESSFUL`).
+* **Objective:** Configure Organic Maps dark basemap background to pure OLED black (`#000000`) across MapCSS definitions and recompile binary drawing rules (`drules_*.bin`), establishing seamless visual parity with TrackZero's design system tokens and maximizing OLED energy efficiency.
+* **Scope Firewall:** MapCSS dark palette and compiled drawing rules only, zero modifications to light/day styles or C++ rendering architecture.
+
+#### Commits:
+1. `[styles] Set dark theme basemap background to pure OLED black`
+   * **Hash:** `3e78f1e`
+   * **Files Modified:**
+     * `data/styles/default/dark/colors.mapcss` — Updated `@background` from `#0f0f0f` to `#000000`.
+     * `data/styles/vehicle/dark/colors.mapcss` — Updated `@background` from `#050505` to `#000000`.
+   * **Verification:** MapCSS syntax verified, outdoors style correctly inherits from default dark palette.
+2. `[styles] Regenerated`
+   * **Hash:** `5cd424a`
+   * **Files Modified:**
+     * `data/colors.txt` — Regenerated color table.
+     * `data/drules_default.bin`, `data/drules_default.txt` — Regenerated default family drawing rules.
+     * `data/drules_outdoors.bin`, `data/drules_outdoors.txt` — Regenerated outdoors family drawing rules.
+     * `data/drules_vehicle.bin`, `data/drules_vehicle.txt` — Regenerated vehicle family drawing rules.
+   * **Verification:** Generated with `tools/unix/generate_drules.sh` via `tools/kothic`. Full `./gradlew app:ktlintCheck -Parm64`, Kotlin/Java compilation, and unit tests passed cleanly (`BUILD SUCCESSFUL`).
+3. `Merge task 'feat/style-oled-black-map' into ws/ui` (Merge commit: `6dc6b6b`)
 
 ---
+
 
