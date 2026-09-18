@@ -37,68 +37,68 @@
 /* 3.NATURAL */
 /* 3.1 Main natural */
 
-@glacier: #111111;
+@glacier: #000000;
 @water: #002222;
 @water_bad: #00261e;
 @river: #3FA7C0;
-@wetland: #5C747F;
-@beach: #28281A;
-@barerock: #302A2A;
-@scree: #242020;
-@desert: #191007;
+@wetland: #000000;
+@beach: #000000;
+@barerock: #000000;
+@scree: #000000;
+@desert: #000000;
 
 /*3.2 Vegetation*/
 
-@forest: #363d19;
-@green0: #1f2310;
-@green1: #262a13;
-@green1b: #2a2f14;
-@green2: #2d3216;
-@green3: #313715;
-@green4: #383e19;
-@green5: #39401c;
-@green6: #47491d;
-@flowers: #3d451c;
+@forest: #000000;
+@green0: #000000;
+@green1: #000000;
+@green1b: #000000;
+@green2: #000000;
+@green3: #000000;
+@green4: #000000;
+@green5: #000000;
+@green6: #000000;
+@flowers: #000000;
 
 /* 4.LANDUSE */
 /*4.1 Main landuse*/
 
-@pedestrian_area: #262222;
-@pedestrian_area_light: #262222;
-@platform: #262222;
-@leisure: #262222;
-@university: #2e1f05;
-@hospital: #2b0808;
-@industrial: #17151e;
-@sport0: #24220f;
-@sport1: #292814;
-@sport2: #2f2c19;
-@parking: #232306;
-@military: #B71C1C;
-@prison: #7f7f7f;
-@farmland: #2e2b0f;
-@farmyard: #2e260f; 
+@pedestrian_area: #000000;
+@pedestrian_area_light: #000000;
+@platform: #000000;
+@leisure: #000000;
+@university: #000000;
+@hospital: #000000;
+@industrial: #000000;
+@sport0: #000000;
+@sport1: #000000;
+@sport2: #000000;
+@parking: #000000;
+@military: #000000;
+@prison: #000000;
+@farmland: #000000;
+@farmyard: #000000; 
 
 /*4.2 Aerodrome*/
 
- @aerodrome0: #382D45;
- @aerodrome1: #342A40;
- @aerodrome2: #30263B;
- @aerodrome3: #30263B;
- @aerodrome4: #2B2336;
- @aerodrome5: #292133;
+ @aerodrome0: #000000;
+ @aerodrome1: #000000;
+ @aerodrome2: #000000;
+ @aerodrome3: #000000;
+ @aerodrome4: #000000;
+ @aerodrome5: #000000;
 
 /* 4.3 Barriers */
 @fence: #444444;
-@hedge: #183218;
-@cliff: #7D4F23;
+@hedge: #000000;
+@cliff: #000000;
 
 /* 4.4 Buildings */
 
-@building0: #3B3B3B;
-@building1: #424242;
-@building_border0: #616161;
-@building_border1: #696969;
+@building0: #000000;
+@building1: #000000;
+@building_border0: #000000;
+@building_border1: #000000;
 
 /* 5.ROADS */
 /* 5.1 All roads */
@@ -173,8 +173,8 @@
 /* 6.2 Natural labels */
 
 @water_label: #004A59;
-@park_label: #2B4918;
-@halo_park_label: #111;
+@park_label: #000000;
+@halo_park_label: #000000;
 
 /* 6.3 Place labels */
 
@@ -197,14 +197,14 @@
 
 /* 7.ISOLINES COLORS */
 
-@isoline1000: #496149;
-@isoline500: #496149;
-@isoline100: #496149;
-@isoline50: #496149;
-@isoline10: #496149;
+@isoline1000: #000000;
+@isoline500: #000000;
+@isoline100: #000000;
+@isoline50: #000000;
+@isoline10: #000000;
 
-@label_isoline1000: #496149;
-@label_isoline500: #496149;
-@label_isoline100: #496149;
-@label_isoline50: #496149;
-@label_isoline10: #496149;
+@label_isoline1000: #000000;
+@label_isoline500: #000000;
+@label_isoline100: #000000;
+@label_isoline50: #000000;
+@label_isoline10: #000000;

@@ -310,3 +310,26 @@ main
 
 ---
 
+### Task: `feat/style-minimal-black-map`
+* **Parent Branch:** `ws/ui`
+* **Objective:** Simplify the dark basemap presentation by setting vegetation, forest, park, grass, farmland, landuse, and isoline contours to pure OLED black (`#000000`), creating a distraction-free, pure black background canvas where roads and cycling routes stand out with maximum contrast.
+* **Scope Firewall:** MapCSS dark palette and compiled drawing rules only, zero modifications to light/day styles or C++ rendering architecture.
+
+#### Commits:
+1. `[styles] Simplify dark basemap by removing vegetation and landcover fills`
+   * **Hash:** `b37a715`
+   * **Files Modified:**
+     * `data/styles/default/dark/colors.mapcss` — Set vegetation (`@forest`, `@green0`..`@green6`, `@flowers`), landcover/farmlands (`@farmland`, `@farmyard`, `@leisure`, etc.), buildings, natural labels, and isoline contours to `#000000`.
+     * `data/styles/vehicle/dark/colors.mapcss` — Set vegetation, landuse, and building fills to `#000000`.
+   * **Verification:** MapCSS syntax verified, outdoors style correctly inherits from default dark palette.
+2. `[styles] Regenerated`
+   * **Hash:** `52fbcf9`
+   * **Files Modified:**
+     * `data/colors.txt` — Regenerated color table.
+     * `data/drules_default.bin`, `data/drules_default.txt` — Regenerated default family drawing rules.
+     * `data/drules_outdoors.bin`, `data/drules_outdoors.txt` — Regenerated outdoors family drawing rules.
+     * `data/drules_vehicle.bin`, `data/drules_vehicle.txt` — Regenerated vehicle family drawing rules.
+   * **Verification:** Generated with `tools/unix/generate_drules.sh` via `tools/kothic`. Verified live on running Android emulator `trackzero_pixel7`. Map renders 100% pure black between routes with zero green vegetation patches or isoline noise. Full `./gradlew app:ktlintCheck` passed cleanly (`BUILD SUCCESSFUL`).
+
+---
+
