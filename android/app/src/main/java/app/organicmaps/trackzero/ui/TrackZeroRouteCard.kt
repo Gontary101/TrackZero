@@ -34,6 +34,8 @@ class TrackZeroRouteCard @JvmOverloads constructor(
     private val btnStartRide: View
 
     init {
+        isClickable = true
+        isFocusable = true
         LayoutInflater.from(context).inflate(R.layout.trackzero_card_featured_route, this, true)
 
         tvEyebrow = findViewById(R.id.tv_route_eyebrow)

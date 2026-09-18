@@ -7,7 +7,9 @@
   android:id="@+id/trackzero_routes_root"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  android:background="@color/trackzero_oled_black">
+  android:background="@color/trackzero_oled_black"
+  android:clickable="true"
+  android:focusable="true">
 
   <!-- Header: ROUTES Dot-Matrix Wordmark -->
   <ImageView

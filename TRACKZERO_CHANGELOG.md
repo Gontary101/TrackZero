@@ -271,6 +271,23 @@ main
    * **Verification:** Generated with `tools/unix/generate_drules.sh` via `tools/kothic`. Full `./gradlew app:ktlintCheck -Parm64`, Kotlin/Java compilation, and unit tests passed cleanly (`BUILD SUCCESSFUL`).
 3. `Merge task 'feat/style-oled-black-map' into ws/ui` (Merge commit: `6dc6b6b`)
 
+### Task: `fix/ui-map-overlay-layout-qualifiers`
+* **Parent Branch:** `ws/ui`
+* **Objective:** Support TrackZero map overlay across all Android layout-qualifier variants (`layout-h400dp`, `layout-h400dp-land`, `layout-land`) and prevent touch events from falling through to the underlying `MapView`.
+* **Scope Firewall:** Android presentation layout variants and touch handling only.
+
+#### Commits:
+1. `[android] Support TrackZero map overlay across all layout qualifiers`
+   * **Hash:** `33a65b6`
+   * **Files Modified:**
+     * `android/app/src/main/res/layout-h400dp/map_buttons_layout_regular.xml` — Included `trackzero_map_overlay` and set legacy button containers to `gone`.
+     * `android/app/src/main/res/layout-h400dp-land/map_buttons_layout_regular.xml` — Included `trackzero_map_overlay` and set legacy button containers to `gone`.
+     * `android/app/src/main/res/layout-land/map_buttons_layout_regular.xml` — Included `trackzero_map_overlay` and set legacy button containers to `gone`.
+     * `android/app/src/main/java/app/organicmaps/maplayer/MapButtonsController.java` — Explicitly hid legacy frames and guarded visibility checks when `mTrackZeroOverlayController != null`.
+     * `android/app/src/main/java/app/organicmaps/trackzero/ui/TrackZeroRouteCard.kt` — Set `isClickable = true` and `isFocusable = true` to consume touches.
+     * `android/app/src/main/res/layout/trackzero_fragment_routes.xml` — Added `clickable="true"` and `focusable="true"` to prevent tap pass-through to map.
+   * **Verification:** Verified live on running Android emulator `trackzero_pixel7` (API 34, 1080x2400 @ 420dpi). `./gradlew app:ktlintCheck` and unit tests passed cleanly.
+
 ---
 
 
