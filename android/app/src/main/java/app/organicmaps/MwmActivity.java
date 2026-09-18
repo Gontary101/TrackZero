@@ -819,6 +819,11 @@ public class MwmActivity extends BaseMwmFragmentActivity
     final MapButtonsController controller = getMapButtonsController();
     if (controller != null && controller.getTrackZeroOverlayController() != null)
       controller.getTrackZeroOverlayController().showRouteCard(route);
+
+    if (route.getLat() != 0.0 && route.getLon() != 0.0)
+    {
+      Framework.nativeSetViewportCenter(route.getLat(), route.getLon(), route.getZoom() > 0 ? route.getZoom() : 11);
+    }
   }
 
   private void showBottomSheet(String id)

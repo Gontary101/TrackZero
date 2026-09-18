@@ -98,11 +98,22 @@
     android:layout_marginTop="@dimen/trackzero_space_md"
     android:layout_marginEnd="@dimen/trackzero_space_md"
     android:clipToPadding="false"
-    android:paddingBottom="120dp"
+    android:paddingBottom="160dp"
     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/layout_routes_filter_bar"
     tools:listitem="@layout/trackzero_item_route_card" />
+
+  <!-- Bottom Gradient Fade Scrim (Fades list cards into OLED black under bottom island) -->
+  <View
+    android:id="@+id/v_routes_bottom_scrim"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="@drawable/trackzero_scrim_bottom_fade"
+    android:clickable="false"
+    android:focusable="false"
+    android:importantForAccessibility="no"
+    app:layout_constraintBottom_toBottomOf="parent" />
 
   <!-- Floating Bottom Navigation Island -->
   <app.organicmaps.trackzero.ui.TrackZeroBottomIsland
@@ -113,5 +124,4 @@
     android:layout_marginEnd="@dimen/trackzero_bottom_island_side_inset"
     android:layout_marginBottom="@dimen/trackzero_bottom_island_bottom_offset"
     app:layout_constraintBottom_toBottomOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
