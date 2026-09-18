@@ -290,4 +290,23 @@ main
 
 ---
 
+### Task: `feat/ui-routes-bottom-fade-scrim`
+* **Parent Branch:** `ws/ui`
+* **Objective:** Add a bottom gradient fade scrim to smoothly dissolve scrolling route cards into OLED black before they reach the bottom island zone, eliminating optical overlapping artifacts; and bundle a real GPX route (Clermont-Ferrand 70.7 km loop) rendered live on the native Organic Maps vector engine.
+* **Scope Firewall:** Android layout, drawable scrim gradient, and bundled route asset integration.
+
+#### Commits:
+1. `[android] Add routes bottom fade scrim and integrate GPX route`
+   * **Hash:** `79e28b2`
+   * **Files Added:**
+     * `android/app/src/main/res/drawable/trackzero_scrim_bottom_fade.xml` — Vertical linear gradient (`#00000000` to `#FF000000`) fading elements into pure OLED black.
+     * `android/app/src/main/assets/routes/clermont_ferrand.gpx` — 70.7 km, 1,301 m elevation loop GPX route asset.
+   * **Files Modified:**
+     * `android/app/src/main/res/layout/trackzero_fragment_routes.xml` — Added 200dp non-clickable fade scrim and expanded RecyclerView bottom padding to 160dp.
+     * `android/app/src/main/java/app/organicmaps/trackzero/data/TrackZeroRouteItem.kt` — Extended model with coordinates (`lat`, `lon`, `zoom`), `trackId`, and `gpxAssetPath`.
+     * `android/app/src/main/java/app/organicmaps/trackzero/ui/TrackZeroRoutesFragment.kt` — Added Clermont-Ferrand loop item and automated asset extraction & import via `BookmarkManager.INSTANCE.loadBookmarksFile()`.
+     * `android/app/src/main/java/app/organicmaps/MwmActivity.java` — Centered viewport on selected route coordinates via `Framework.nativeSetViewportCenter()`.
+   * **Verification:** Verified live on running Android emulator `trackzero_pixel7`. Bottom cards fade into pure OLED black without duplicate overlay artifacts. Full `./gradlew app:ktlintCheck` and unit tests passed cleanly (`BUILD SUCCESSFUL`).
+
+---
 

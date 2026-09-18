@@ -1,5 +1,6 @@
 package app.organicmaps.trackzero.ui
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,8 +14,11 @@ import androidx.recyclerview.widget.RecyclerView
 import app.organicmaps.MwmActivity
 import app.organicmaps.R
 import app.organicmaps.maplayer.MapButtonsController
+import app.organicmaps.sdk.bookmarks.data.BookmarkManager
+import app.organicmaps.sdk.util.log.Logger
 import app.organicmaps.trackzero.data.TrackZeroRouteItem
 import app.organicmaps.util.WindowInsetUtils
+import java.io.File
 
 /**
  * TrackZero Routes Browse Screen Fragment.
@@ -39,6 +43,20 @@ class TrackZeroRoutesFragment : Fragment() {
     private lateinit var bottomIsland: TrackZeroBottomIsland
 
     private val allRoutes = listOf(
+        TrackZeroRouteItem(
+            id = "route-clermont",
+            title = "Clermont-Ferrand Loop",
+            distanceKm = 70.7,
+            elevationGainM = 1301,
+            thumbnailResId = R.drawable.trackzero_ic_route_silhouette_1,
+            isFavorite = true,
+            isDownloaded = true,
+            trackId = 1L,
+            lat = 45.77975,
+            lon = 2.97,
+            zoom = 11,
+            gpxAssetPath = "routes/clermont_ferrand.gpx",
+        ),
         TrackZeroRouteItem(
             id = "route-1",
             title = "Puy de Dôme Loop",
@@ -153,7 +171,28 @@ class TrackZeroRoutesFragment : Fragment() {
             }
         }
 
+        ensureGpxRoutesImported()
         setFilter(RouteFilter.LOCAL)
+    }
+
+    private fun ensureGpxRoutesImported() {
+        val ctx = context ?: return
+        val prefs = ctx.getSharedPreferences("trackzero_prefs", Context.MODE_PRIVATE)
+        if (!prefs.getBoolean("clermont_gpx_imported", false)) {
+            try {
+                ctx.assets.open("routes/clermont_ferrand.gpx").use { input ->
+                    val cacheFile = File(ctx.cacheDir, "Clermont-Ferrand.gpx")
+                    cacheFile.outputStream().use { output ->
+                        input.copyTo(output)
+                    }
+                    BookmarkManager.INSTANCE.loadBookmarksFile(cacheFile.absolutePath, true)
+                    BookmarkManager.INSTANCE.setAllCategoriesVisibility(true)
+                    prefs.edit().putBoolean("clermont_gpx_imported", true).apply()
+                }
+            } catch (e: Exception) {
+                Logger.e("TrackZeroRoutesFragment", "Failed to import bundled GPX route", e)
+            }
+        }
     }
 
     fun setFilter(filter: RouteFilter) {

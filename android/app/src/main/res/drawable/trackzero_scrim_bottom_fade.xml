@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- TrackZero Bottom Scrim Gradient — Fades scrolling content smoothly into OLED black under bottom island -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+  android:shape="rectangle">
+  <gradient
+    android:angle="270"
+    android:startColor="#00000000"
+    android:centerColor="#FF000000"
+    android:endColor="@color/trackzero_oled_black"
+    android:type="linear" />
+</shape>
