@@ -816,6 +816,7 @@ public class MwmActivity extends BaseMwmFragmentActivity
   public void onTrackZeroRouteSelected(@NonNull TrackZeroRouteItem route)
   {
     hideTrackZeroRoutes();
+    TrackZeroRoutesFragment.ensureGpxRouteImported(this, route);
     final MapButtonsController controller = getMapButtonsController();
     if (controller != null && controller.getTrackZeroOverlayController() != null)
       controller.getTrackZeroOverlayController().showRouteCard(route);

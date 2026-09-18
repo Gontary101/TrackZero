@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1" creator="OpenAI — waypoint-preserving Komoot adaptation" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>Circuit des volcans — boucle depuis le domicile</name>
+    <desc>Départ et arrivée au domicile. Jonction au waypoint 2, puis parcours cyclique des waypoints Komoot dans leur direction originale : 2 → 3 → A/B → 1 → 2.</desc>
+    <link href="https://www.komoot.com/smarttour/e1088700642">
+      <text>Circuit Komoot d’origine</text>
+    </link>
+  </metadata>
+  <wpt lat="45.779750" lon="3.101450">
+    <name>Départ / arrivée — Domicile</name>
+    <desc>58 avenue de l’Union-Soviétique, Clermont-Ferrand</desc>
+    <sym>Residence</sym>
+    <type>Waypoint</type>
+  </wpt>
+  <wpt lat="45.820833" lon="2.846111">
+    <ele>673</ele>
+    <name>A/B — Gare de Pontgibaud</name>
+    <desc>Départ et arrivée originaux du circuit Komoot</desc>
+    <sym>Transportation</sym>
+    <type>Waypoint</type>
+  </wpt>
+  <wpt lat="45.763919" lon="2.955558">
+    <ele>1080</ele>
+    <name>1 — Col de Ceyssat</name>
+    <desc>Waypoint Komoot original</desc>
+    <sym>Summit</sym>
+    <type>Waypoint</type>
+  </wpt>
+  <wpt lat="45.783821" lon="3.049275">
+    <name>2 — Point de vue sur Clermont-Ferrand</name>
+    <desc>Waypoint Komoot original — point de jonction depuis le domicile</desc>
+    <sym>Scenic Area</sym>
+    <type>Waypoint</type>
+  </wpt>
+  <wpt lat="45.805767" lon="2.978381">
+    <ele>997</ele>
+    <name>3 — Col des Goules</name>
+    <desc>Waypoint Komoot original</desc>
+    <sym>Summit</sym>
+    <type>Waypoint</type>
+  </wpt>
+  <rte>
+    <name>Circuit des volcans — domicile → boucle Komoot → domicile</name>
+    <desc>Tous les waypoints originaux sont conservés. À importer comme itinéraire et à recaler sur les routes cyclables dans l’application de navigation.</desc>
+    <type>Road cycling</type>
+    <rtept lat="45.779750" lon="3.101450">
+      <name>Départ — Domicile</name>
+      <desc>58 avenue de l’Union-Soviétique, Clermont-Ferrand</desc>
+      <type>Start</type>
+    </rtept>
+    <rtept lat="45.783821" lon="3.049275">
+      <name>2 — Point de vue — entrée sur la boucle Komoot</name>
+      <desc>Waypoint Komoot original — point de jonction depuis le domicile</desc>
+      <type>Via</type>
+    </rtept>
+    <rtept lat="45.805767" lon="2.978381">
+      <ele>997</ele>
+      <name>3 — Col des Goules</name>
+      <desc>Waypoint Komoot original</desc>
+      <type>Via</type>
+    </rtept>
+    <rtept lat="45.820833" lon="2.846111">
+      <ele>673</ele>
+      <name>A/B — Gare de Pontgibaud</name>
+      <desc>Départ et arrivée originaux du circuit Komoot</desc>
+      <type>Via</type>
+    </rtept>
+    <rtept lat="45.763919" lon="2.955558">
+      <ele>1080</ele>
+      <name>1 — Col de Ceyssat</name>
+      <desc>Waypoint Komoot original</desc>
+      <type>Via</type>
+    </rtept>
+    <rtept lat="45.783821" lon="3.049275">
+      <name>2 — Point de vue — boucle Komoot terminée</name>
+      <desc>Waypoint Komoot original — point de jonction depuis le domicile</desc>
+      <type>Via</type>
+    </rtept>
+    <rtept lat="45.779750" lon="3.101450">
+      <name>Arrivée — Domicile</name>
+      <desc>58 avenue de l’Union-Soviétique, Clermont-Ferrand</desc>
+      <type>Finish</type>
+    </rtept>
+  </rte>
+</gpx>

@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1" creator="OpenAI route planning" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>Clermont-Ferrand – Saint-Nectaire churches route</name>
+    <desc>Road-oriented VIA-POINT route without Murol. Recalculate with BRouter fastbike-verylowtraffic, inspect the snapped line, then export it as a track for OsmAnd. Reject any routing over path, track, bridleway, GR, steps, or unpaved surface.</desc>
+    <link href="https://brouter.de/brouter-web/#map=10/45.67/3.02/standard&amp;lonlats=3.100500,45.779000;3.090150,45.767950;3.082940,45.751650;3.100000,45.729000;3.090000,45.712000;3.094550,45.694300;3.093472,45.660139;3.046800,45.621240;2.992490,45.588236;2.945000,45.578056;2.992490,45.588236;3.002590,45.642390;2.975710,45.660900;2.982250,45.666690;3.004590,45.671520;3.002923,45.703107;3.019000,45.720200;3.046430,45.726130;3.063700,45.731600;3.083000,45.751000;3.090150,45.767950;3.100500,45.779000&amp;profile=fastbike-verylowtraffic&amp;alternativeidx=0">
+      <text>Open the constrained route in BRouter Web</text>
+    </link>
+  </metadata>
+  <wpt lat="45.6601390" lon="3.0934720">
+    <name>07 STOP — Église Notre-Dame and Château de Saint-Saturnin</name>
+    <desc>Romanesque church and castle in the same village.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="45.5882360" lon="2.9924900">
+    <name>09 MAIN STOP — Église de Saint-Nectaire</name>
+    <desc>Main destination on Mont Cornadore.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <wpt lat="45.6666900" lon="2.9822500">
+    <name>14 Lac d'Aydat — Sauteyras</name>
+    <desc>Scenic rest stop.</desc>
+    <sym>Flag</sym>
+  </wpt>
+  <rte>
+    <name>Clermont – Saint-Saturnin – Saint-Nectaire – Aydat – Clermont</name>
+    <desc>Constrained via route for paved-road recalculation, without Murol. Preserve every via point.</desc>
+    <rtept lat="45.7790000" lon="3.1005000">
+      <name>01 — Gare SNCF Clermont-Ferrand</name>
+      <desc>Station area. Join the southbound urban cycle network.</desc>
+      <type>Via point</type>
+    </rtept>
+    <rtept lat="45.7679500" lon="3.0901500">
+      <name>02 — 02 Boulevard Fleury cycle track</name>
+      <desc>Use the separated cycle facility.</desc>
+      <type>Via point</type>
+    </rtept>
+    <rtept lat="45.7516500" lon="3.0829400">
+      <name>03 — 03 Beaumont / rue Poncillon</name>
+      <desc>Low-stress urban connection.</desc>
+      <type>Via point</type>
+    </rtept>
+    <rtept lat="45.7290000" lon="3.1000000">
+      <name>04 — 04 Romagnat</name>
+      <desc>Stay on paved village streets.</desc>
+      <type>Via point</type>
+    </rtept>
+    <rtept lat="45.7120000" lon="3.0900000">
+      <name>05 — 05 Opme</name>
+      <desc>Paved local-road corridor.</desc>
+      <type>Via point</type>
+    </rtept>
+    <rtept lat="45.6943000" lon="3.0945500">
+      <name>06 — 06 Chanonat</name>
+      <desc>Paved village roads; narrow bends.</desc>
+      <type>Via point</type>
+    </rtept>
+    <rtept lat="45.6601390" lon="3.0934720">
+      <name>07 — Église Notre-Dame and Château de Saint-Saturnin</name>
+      <desc>Romanesque church and castle in the same village.</desc>
+      <type>Via point</type>
+    </rtept>
+    <rtept lat="45.6212400" lon="3.0468000">
+      <name>08 — 08 Olloix</name>
+      <desc>Paved rural-road link.</desc>
+      <type>Via point</type>
+    </rtept>
+    <rtept lat="45.5882360" lon="2.9924900">
+      <name>09 — Église de Saint-Nectaire</name>
+      <desc>Main destination on Mont Cornadore.</desc>
+      <type>Via point</type>
+    </rtept>
+    <rtept lat="45.6423900" lon="3.0025900">
+      <name>10 — 12 Fohet</name>
+      <desc>Use the paved Route de Fohet corridor; reject any trail shortcut.</desc>
+      <type>Via point</type>
+    </rtept>
+    <rtept lat="45.6609000" lon="2.9757100">
+      <name>11 — 13 Aydat village</name>
+      <desc>Optional food/water stop.</desc>
+      <type>Via point</type>
+    </rtept>
+    <rtept lat="45.6666900" lon="2.9822500">
+      <name>12 — Sauteyras</name>
+      <desc>Scenic rest stop.</desc>
+      <type>Via point</type>
+    </rtept>
+    <rtept lat="45.6715200" lon="3.0045900">
+      <name>13 — 15 Rouillas-Bas</name>
+      <desc>Use the signed paved cycling connection.</desc>
+      <type>Via point</type>
+    </rtept>
+    <rtept lat="45.7031070" lon="3.0029230">
+      <name>14 — 16 Fontfreyde</name>
+      <desc>Stay on the paved road. Do not accept a path/GR shortcut.</desc>
+      <type>Via point</type>
+    </rtept>
+    <rtept lat="45.7202000" lon="3.0190000">
+      <name>15 — 17 Saint-Genès-Champanelle</name>
+      <desc>Paved village-road corridor.</desc>
+      <type>Via point</type>
+    </rtept>
+    <rtept lat="45.7261300" lon="3.0464300">
+      <name>16 — 18 Berzet</name>
+      <desc>Paved descent toward Ceyrat.</desc>
+      <type>Via point</type>
+    </rtept>
+    <rtept lat="45.7316000" lon="3.0637000">
+      <name>17 — 19 Ceyrat</name>
+      <desc>Use the greenway/urban cycling facilities where available.</desc>
+      <type>Via point</type>
+    </rtept>
+    <rtept lat="45.7510000" lon="3.0830000">
+      <name>18 — 20 Beaumont</name>
+      <desc>Reconnect to the metropolitan cycle network.</desc>
+      <type>Via point</type>
+    </rtept>
+    <rtept lat="45.7679500" lon="3.0901500">
+      <name>19 — 21 Boulevard Fleury cycle track</name>
+      <desc>Separated cycle facility.</desc>
+      <type>Via point</type>
+    </rtept>
+    <rtept lat="45.7790000" lon="3.1005000">
+      <name>20 — Gare SNCF Clermont-Ferrand</name>
+      <desc>Finish.</desc>
+      <type>Via point</type>
+    </rtept>
+  </rte>
+</gpx>

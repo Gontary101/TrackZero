@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- TrackZero Route Silhouette for Boucle des Volcans — Domicile -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+  android:width="64dp"
+  android:height="64dp"
+  android:viewportWidth="64"
+  android:viewportHeight="64">
+  <path
+    android:pathData="M 56.0,35.4 L 46.2,34.3 L 32.9,28.4 L 8.0,24.3 L 28.6,39.7 L 46.2,34.3 L 56.0,35.4 Z"
+    android:strokeColor="@color/trackzero_mint_accent"
+    android:strokeWidth="2.5"
+    android:strokeLineCap="round"
+    android:strokeLineJoin="round"
+    android:fillColor="#00000000" />
+</vector>

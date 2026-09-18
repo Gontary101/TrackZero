@@ -331,5 +331,20 @@ main
      * `data/drules_vehicle.bin`, `data/drules_vehicle.txt` — Regenerated vehicle family drawing rules.
    * **Verification:** Generated with `tools/unix/generate_drules.sh` via `tools/kothic`. Verified live on running Android emulator `trackzero_pixel7`. Map renders 100% pure black between routes with zero green vegetation patches or isoline noise. Full `./gradlew app:ktlintCheck` passed cleanly (`BUILD SUCCESSFUL`).
 
----
+### Task: `feat/ui-catalog-all-gpx-routes`
+* **Parent Branch:** `ws/ui`
+* **Objective:** Ingest the full GPX route library (17 unique cycling routes) from `/home/gana/Downloads/GPS_Routes`, generate real-world RDP-simplified vector silhouettes for each card matching the mockup design, bundle the assets, display distances and elevations, and support on-demand GPX import to native Organic Maps rendering.
+* **Scope Firewall:** Android assets, vector drawables, TrackZeroRoutesFragment catalog and MwmActivity selection handler.
 
+#### Commits:
+1. `[android] Catalog all GPS_Routes with real vector silhouettes`
+   * **Hash:** `500bec1`
+   * **Files Added:**
+     * `android/app/src/main/assets/routes/*.gpx` — 17 bundled GPX cycling routes spanning regional loops, climbs, and endurance tours.
+     * `android/app/src/main/res/drawable/trackzero_ic_route_*.xml` — 17 custom Android VectorDrawables generated via Ramer-Douglas-Peucker simplification from raw GPX coordinates, rendered in mint stroke with rounded caps/joins.
+   * **Files Modified:**
+     * `android/app/src/main/java/app/organicmaps/trackzero/ui/TrackZeroRoutesFragment.kt` — Populated catalog with all 17 routes, hooked up vector silhouette drawables, categorized by distance (`LOCAL` < 100 km), and added static `ensureGpxRouteImported()` handler.
+     * `android/app/src/main/java/app/organicmaps/MwmActivity.java` — Triggered on-demand GPX import into `BookmarkManager` upon route selection.
+   * **Verification:** Verified live on running Android emulator `trackzero_pixel7`. Routes screen displays all 17 real routes with exact geometry silhouettes, elevation gains, and distances. Verified on-demand import and map centering. `./gradlew app:ktlintCheck` passed with 0 errors.
+
+---
