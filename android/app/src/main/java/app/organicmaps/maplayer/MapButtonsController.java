@@ -184,6 +184,13 @@ public class MapButtonsController extends Fragment
     final View trackzeroOverlay = mFrame.findViewById(R.id.trackzero_map_overlay);
     if (trackzeroOverlay != null)
     {
+      if (mInnerRightButtonsFrame != null)
+        mInnerRightButtonsFrame.setVisibility(View.GONE);
+      if (mBottomButtonsFrame != null)
+        mBottomButtonsFrame.setVisibility(View.GONE);
+      if (mToggleMapLayerButton != null)
+        mToggleMapLayerButton.setVisibility(View.GONE);
+
       mTrackZeroOverlayController = new TrackZeroMapOverlayController(
           trackzeroOverlay,
           new TrackZeroMapOverlayController.MapActionsBridge()
@@ -246,12 +253,16 @@ public class MapButtonsController extends Fragment
   // For disabling bottom buttons which are visible in tablets
   private void setBottomButtonsHidden(boolean hide)
   {
+    if (mTrackZeroOverlayController != null)
+      return;
     if (mBottomButtonsFrame != null)
       UiUtils.showIf(!hide, mBottomButtonsFrame);
   }
 
   public void showButton(boolean show, MapButtonsController.MapButtons button)
   {
+    if (mTrackZeroOverlayController != null && button != MapButtons.trackRecordingStatus)
+      return;
     // TODO(AB): Why do we need this check? Isn't it better to crash and fix the wrong logic ASAP?
     final View buttonView = mButtonsMap.get(button);
     if (buttonView == null)
@@ -461,6 +472,8 @@ public class MapButtonsController extends Fragment
 
   private void updateButtonsVisibility(final float translation, @Nullable View parent)
   {
+    if (mTrackZeroOverlayController != null)
+      return;
     if (parent == null)
       return;
     for (Map.Entry<MapButtons, View> entry : mButtonsMap.entrySet())
