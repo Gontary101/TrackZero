@@ -44,72 +44,242 @@ class TrackZeroRoutesFragment : Fragment() {
 
     private val allRoutes = listOf(
         TrackZeroRouteItem(
-            id = "route-clermont",
+            id = "route-clermont-71km",
             title = "Clermont-Ferrand Loop",
-            distanceKm = 70.7,
-            elevationGainM = 1301,
-            thumbnailResId = R.drawable.trackzero_ic_route_silhouette_1,
+            distanceKm = 70.5,
+            elevationGainM = 1491,
+            thumbnailResId = R.drawable.trackzero_ic_route_clermont_71km,
             isFavorite = true,
             isDownloaded = true,
             trackId = 1L,
-            lat = 45.77975,
-            lon = 2.97,
+            lat = 45.7882,
+            lon = 2.9632,
             zoom = 11,
-            gpxAssetPath = "routes/clermont_ferrand.gpx",
+            gpxAssetPath = "routes/clermont_71km.gpx",
         ),
         TrackZeroRouteItem(
-            id = "route-1",
-            title = "Puy de Dôme Loop",
-            distanceKm = 78.4,
-            elevationGainM = 1420,
-            thumbnailResId = R.drawable.trackzero_ic_route_silhouette_1,
+            id = "route-puy-de-dome",
+            title = "Puy de Dôme Summit Climb",
+            distanceKm = 69.5,
+            elevationGainM = 1520,
+            thumbnailResId = R.drawable.trackzero_ic_route_puy_de_dome_70km,
             isFavorite = true,
             isDownloaded = true,
+            trackId = 2L,
+            lat = 45.7882,
+            lon = 2.9632,
+            zoom = 11,
+            gpxAssetPath = "routes/puy_de_dome_70km.gpx",
         ),
         TrackZeroRouteItem(
-            id = "route-2",
-            title = "Col du Galibier Climb",
-            distanceKm = 42.6,
-            elevationGainM = 2150,
-            thumbnailResId = R.drawable.trackzero_ic_route_silhouette_1,
+            id = "route-lac-aydat-78km",
+            title = "Lac d'Aydat Grand Circuit",
+            distanceKm = 77.7,
+            elevationGainM = 1786,
+            thumbnailResId = R.drawable.trackzero_ic_route_lac_aydat_78km,
             isFavorite = true,
-            isDownloaded = false,
-        ),
-        TrackZeroRouteItem(
-            id = "route-3",
-            title = "Mont Ventoux Challenge",
-            distanceKm = 56.2,
-            elevationGainM = 1980,
-            thumbnailResId = R.drawable.trackzero_ic_route_silhouette_1,
-            isFavorite = false,
             isDownloaded = true,
+            trackId = 3L,
+            lat = 45.6993,
+            lon = 3.0485,
+            zoom = 11,
+            gpxAssetPath = "routes/lac_aydat_78km.gpx",
         ),
         TrackZeroRouteItem(
-            id = "route-4",
-            title = "Lake Annecy Circuit",
-            distanceKm = 38.0,
-            elevationGainM = 450,
-            thumbnailResId = R.drawable.trackzero_ic_route_silhouette_1,
-            isFavorite = false,
-            isDownloaded = false,
+            id = "route-circuit-volcans-67km",
+            title = "Circuit des Volcans d'Auvergne",
+            distanceKm = 67.4,
+            elevationGainM = 1350,
+            thumbnailResId = R.drawable.trackzero_ic_route_circuit_volcans_67km,
+            isFavorite = true,
+            isDownloaded = true,
+            trackId = 4L,
+            lat = 45.7884,
+            lon = 2.9633,
+            zoom = 11,
+            gpxAssetPath = "routes/circuit_volcans_67km.gpx",
         ),
         TrackZeroRouteItem(
-            id = "route-5",
-            title = "Côte de la Redoute",
+            id = "route-gorges-aydat-65km",
+            title = "Gorges & Lac d'Aydat",
             distanceKm = 64.5,
-            elevationGainM = 920,
-            thumbnailResId = R.drawable.trackzero_ic_route_silhouette_1,
-            isFavorite = true,
-            isDownloaded = true,
-        ),
-        TrackZeroRouteItem(
-            id = "route-6",
-            title = "Alpe d'Huez Ascent",
-            distanceKm = 32.1,
-            elevationGainM = 1180,
-            thumbnailResId = R.drawable.trackzero_ic_route_silhouette_1,
+            elevationGainM = 1452,
+            thumbnailResId = R.drawable.trackzero_ic_route_route_aydat_65km,
             isFavorite = false,
             isDownloaded = true,
+            trackId = 5L,
+            lat = 45.7090,
+            lon = 3.0504,
+            zoom = 11,
+            gpxAssetPath = "routes/route_aydat_65km.gpx",
+        ),
+        TrackZeroRouteItem(
+            id = "route-saint-nectaire-52km",
+            title = "Clermont – Saint-Nectaire",
+            distanceKm = 52.5,
+            elevationGainM = 890,
+            thumbnailResId = R.drawable.trackzero_ic_route_saint_nectaire_52km,
+            isFavorite = false,
+            isDownloaded = true,
+            trackId = 6L,
+            lat = 45.6836,
+            lon = 3.0381,
+            zoom = 11,
+            gpxAssetPath = "routes/saint_nectaire_52km.gpx",
+        ),
+        TrackZeroRouteItem(
+            id = "route-limagne-50km",
+            title = "Plaine de la Limagne — Est",
+            distanceKm = 49.8,
+            elevationGainM = 320,
+            thumbnailResId = R.drawable.trackzero_ic_route_clermont_50km,
+            isFavorite = false,
+            isDownloaded = true,
+            trackId = 7L,
+            lat = 45.7530,
+            lon = 3.1738,
+            zoom = 11,
+            gpxAssetPath = "routes/clermont_50km.gpx",
+        ),
+        TrackZeroRouteItem(
+            id = "route-chateaux-44km",
+            title = "Boucle des Châteaux & Limagne",
+            distanceKm = 44.2,
+            elevationGainM = 339,
+            thumbnailResId = R.drawable.trackzero_ic_route_clermont_44km,
+            isFavorite = false,
+            isDownloaded = true,
+            trackId = 8L,
+            lat = 45.7411,
+            lon = 3.1740,
+            zoom = 11,
+            gpxAssetPath = "routes/clermont_44km.gpx",
+        ),
+        TrackZeroRouteItem(
+            id = "route-volcans-domicile-42km",
+            title = "Boucle des Volcans — Domicile",
+            distanceKm = 42.7,
+            elevationGainM = 1404,
+            thumbnailResId = R.drawable.trackzero_ic_route_circuit_volcans_42km,
+            isFavorite = false,
+            isDownloaded = true,
+            trackId = 9L,
+            lat = 45.7924,
+            lon = 2.9738,
+            zoom = 11,
+            gpxAssetPath = "routes/circuit_volcans_42km.gpx",
+        ),
+        TrackZeroRouteItem(
+            id = "route-ceyssat-durtol-30km",
+            title = "Col de Ceyssat & Durtol",
+            distanceKm = 30.0,
+            elevationGainM = 744,
+            thumbnailResId = R.drawable.trackzero_ic_route_ceyssat_durtol_30km,
+            isFavorite = true,
+            isDownloaded = true,
+            trackId = 10L,
+            lat = 45.7988,
+            lon = 3.0460,
+            zoom = 12,
+            gpxAssetPath = "routes/ceyssat_durtol_30km.gpx",
+        ),
+        TrackZeroRouteItem(
+            id = "route-ceyrat-plateau-28km",
+            title = "Vallée du Ceyrat & Plateau",
+            distanceKm = 28.2,
+            elevationGainM = 296,
+            thumbnailResId = R.drawable.trackzero_ic_route_clermont_28km,
+            isFavorite = false,
+            isDownloaded = true,
+            trackId = 11L,
+            lat = 45.7519,
+            lon = 3.1601,
+            zoom = 12,
+            gpxAssetPath = "routes/clermont_28km.gpx",
+        ),
+        TrackZeroRouteItem(
+            id = "route-plateaux-beaumont-24km",
+            title = "Tour des Plateaux de Beaumont",
+            distanceKm = 24.0,
+            elevationGainM = 380,
+            thumbnailResId = R.drawable.trackzero_ic_route_plateaux_beaumont,
+            isFavorite = false,
+            isDownloaded = true,
+            trackId = 12L,
+            lat = 45.7340,
+            lon = 3.0871,
+            zoom = 12,
+            gpxAssetPath = "routes/plateaux_beaumont.gpx",
+        ),
+        TrackZeroRouteItem(
+            id = "route-cotes-chamalieres-16km",
+            title = "Côtes de Clermont & Chamalières",
+            distanceKm = 16.4,
+            elevationGainM = 421,
+            thumbnailResId = R.drawable.trackzero_ic_route_clermont_16km,
+            isFavorite = false,
+            isDownloaded = true,
+            trackId = 13L,
+            lat = 45.7967,
+            lon = 3.0831,
+            zoom = 13,
+            gpxAssetPath = "routes/clermont_16km.gpx",
+        ),
+        TrackZeroRouteItem(
+            id = "route-aubiere-sprint-6km",
+            title = "Aubière City Sprint",
+            distanceKm = 6.6,
+            elevationGainM = 53,
+            thumbnailResId = R.drawable.trackzero_ic_route_aubiere_clermont,
+            isFavorite = false,
+            isDownloaded = true,
+            trackId = 14L,
+            lat = 45.7690,
+            lon = 3.1123,
+            zoom = 13,
+            gpxAssetPath = "routes/aubiere_clermont.gpx",
+        ),
+        TrackZeroRouteItem(
+            id = "route-clermont-aubiere-3km",
+            title = "Clermont – Aubière Liaison",
+            distanceKm = 3.2,
+            elevationGainM = 66,
+            thumbnailResId = R.drawable.trackzero_ic_route_clermont_aubiere,
+            isFavorite = false,
+            isDownloaded = true,
+            trackId = 15L,
+            lat = 45.7717,
+            lon = 3.1040,
+            zoom = 14,
+            gpxAssetPath = "routes/clermont_aubiere.gpx",
+        ),
+        TrackZeroRouteItem(
+            id = "route-marseille-epic-489km",
+            title = "Clermont to Marseille Grand Tour",
+            distanceKm = 488.8,
+            elevationGainM = 5493,
+            thumbnailResId = R.drawable.trackzero_ic_route_clermont_marseille_489km,
+            isFavorite = true,
+            isDownloaded = true,
+            trackId = 16L,
+            lat = 44.5399,
+            lon = 4.2331,
+            zoom = 8,
+            gpxAssetPath = "routes/clermont_marseille_489km.gpx",
+        ),
+        TrackZeroRouteItem(
+            id = "route-gtmc-gravel-1437km",
+            title = "Grande Traversée Massif Central",
+            distanceKm = 1436.8,
+            elevationGainM = 30512,
+            thumbnailResId = R.drawable.trackzero_ic_route_gtmc_gravel_1437km,
+            isFavorite = true,
+            isDownloaded = true,
+            trackId = 17L,
+            lat = 45.3812,
+            lon = 3.5368,
+            zoom = 7,
+            gpxAssetPath = "routes/gtmc_gravel_1437km.gpx",
         ),
     )
 
@@ -171,27 +341,14 @@ class TrackZeroRoutesFragment : Fragment() {
             }
         }
 
-        ensureGpxRoutesImported()
+        ensureInitialRouteImported()
         setFilter(RouteFilter.LOCAL)
     }
 
-    private fun ensureGpxRoutesImported() {
+    private fun ensureInitialRouteImported() {
         val ctx = context ?: return
-        val prefs = ctx.getSharedPreferences("trackzero_prefs", Context.MODE_PRIVATE)
-        if (!prefs.getBoolean("clermont_gpx_imported", false)) {
-            try {
-                ctx.assets.open("routes/clermont_ferrand.gpx").use { input ->
-                    val cacheFile = File(ctx.cacheDir, "Clermont-Ferrand.gpx")
-                    cacheFile.outputStream().use { output ->
-                        input.copyTo(output)
-                    }
-                    BookmarkManager.INSTANCE.loadBookmarksFile(cacheFile.absolutePath, true)
-                    BookmarkManager.INSTANCE.setAllCategoriesVisibility(true)
-                    prefs.edit().putBoolean("clermont_gpx_imported", true).apply()
-                }
-            } catch (e: Exception) {
-                Logger.e("TrackZeroRoutesFragment", "Failed to import bundled GPX route", e)
-            }
+        if (allRoutes.isNotEmpty()) {
+            ensureGpxRouteImported(ctx, allRoutes.first())
         }
     }
 
@@ -199,7 +356,7 @@ class TrackZeroRoutesFragment : Fragment() {
         currentFilter = filter
         updateFilterTabsUI()
         val filteredList = when (filter) {
-            RouteFilter.LOCAL -> allRoutes
+            RouteFilter.LOCAL -> allRoutes.filter { it.distanceKm < 100.0 }
             RouteFilter.FAVORITES -> allRoutes.filter { it.isFavorite }
             RouteFilter.DOWNLOADED -> allRoutes.filter { it.isDownloaded }
         }
@@ -233,5 +390,27 @@ class TrackZeroRoutesFragment : Fragment() {
         const val TAG = "TrackZeroRoutesFragment"
 
         fun newInstance(): TrackZeroRoutesFragment = TrackZeroRoutesFragment()
+
+        @JvmStatic
+        fun ensureGpxRouteImported(context: Context, route: TrackZeroRouteItem) {
+            val assetPath = route.gpxAssetPath ?: return
+            val prefs = context.getSharedPreferences("trackzero_prefs", Context.MODE_PRIVATE)
+            val key = "gpx_imported_" + route.id
+            if (!prefs.getBoolean(key, false)) {
+                try {
+                    context.assets.open(assetPath).use { input ->
+                        val cacheFile = File(context.cacheDir, route.id + ".gpx")
+                        cacheFile.outputStream().use { output ->
+                            input.copyTo(output)
+                        }
+                        BookmarkManager.INSTANCE.loadBookmarksFile(cacheFile.absolutePath, false)
+                        BookmarkManager.INSTANCE.setAllCategoriesVisibility(true)
+                        prefs.edit().putBoolean(key, true).apply()
+                    }
+                } catch (e: Exception) {
+                    Logger.e(TAG, "Failed to import bundled GPX route: $assetPath", e)
+                }
+            }
+        }
     }
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- TrackZero Route Silhouette for Boucle des Châteaux & Limagne -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+  android:width="64dp"
+  android:height="64dp"
+  android:viewportWidth="64"
+  android:viewportHeight="64">
+  <path
+    android:pathData="M 9.0,13.5 L 13.9,10.1 L 17.1,10.7 L 19.4,9.7 L 20.8,10.2 L 23.0,8.0 L 43.7,9.3 L 43.9,11.4 L 44.9,12.0 L 46.3,11.8 L 48.7,9.7 L 54.2,10.1 L 55.0,14.5 L 52.4,14.7 L 51.9,16.1 L 52.6,16.4 L 51.6,16.6 L 53.1,17.4 L 51.8,18.1 L 52.4,18.9 L 51.2,22.8 L 49.9,24.7 L 47.2,25.5 L 47.2,28.1 L 46.5,27.8 L 45.9,29.0 L 45.9,32.8 L 44.3,37.0 L 45.6,37.8 L 49.3,38.0 L 47.6,43.7 L 46.9,43.5 L 47.6,43.7 L 46.9,46.8 L 43.8,50.0 L 42.1,56.0 L 40.4,55.7 L 39.2,52.1 L 40.2,46.7 L 38.7,44.9 L 39.7,44.1 L 38.4,40.6 L 35.0,36.5 L 35.3,35.3 L 33.1,33.6 L 30.4,28.7 L 16.9,18.0 L 10.9,17.4 L 10.4,13.9 L 10.9,13.5 L 9.0,13.5 Z"
+    android:strokeColor="@color/trackzero_mint_accent"
+    android:strokeWidth="2.5"
+    android:strokeLineCap="round"
+    android:strokeLineJoin="round"
+    android:fillColor="#00000000" />
+</vector>
